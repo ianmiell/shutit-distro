@@ -15,4 +15,4 @@ https://github.com/ianmiell/shutit-distro/blob/master/base/Dockerfile
 
 which is then tagged and pushed as imiell/sd_base
 
-3) This base image is used as a base fot the ShutIt modules in libary/
+3) This base image is used as a base for the ShutIt modules in this repo.
