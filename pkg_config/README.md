@@ -1,0 +1,1 @@
+pkg_config: description of module directory in here
