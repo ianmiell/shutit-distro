@@ -47,6 +47,6 @@ def module():
 		'shutit.tk.sd.pango.pango', 158844782.0119,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.cairo.cairo','shutit.tk.sd.harfbuzz.harfbuzz','shutit.tk.sd.xorg_libs.xorg_libs','shutit.tk.sd.freetype2.freetype2','shutit.tk.sd.glib.glib','shutit.tk.sd.gobject.gobject']
+		depends=['shutit.tk.sd.cairo.cairo','shutit.tk.sd.xorg_libs.xorg_libs','shutit.tk.sd.freetype2.freetype2','shutit.tk.sd.glib.glib','shutit.tk.sd.gobject.gobject']
 	)
 
