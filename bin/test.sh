@@ -15,7 +15,7 @@ popd
 #ls -1 | grep -vw bin | grep -vw [A-Z] | sort > sorteddirs
 #meld sorteddirs sortedtest
 
-for d in pkg_config apache_portable_runtime cpio which tcl sqlite icu libffi libgpg_error libidn lzo nasm nspr onigurama pixman rsync sgml_common sharutils go expect
+for d in pkg_config apache_portable_runtime cpio which tcl sqlite icu libffi libgpg_error libidn lzo nasm nspr onigurama pixman rsync sgml_common sharutils go expect xmlto util_macros less python2 llvm libpng fontconfig freetype2_pre_harfbuzz libjpeg x7proto xcb_proto libxau libxcb glib
 do
 	if [[ $started = "0" ]]
 	then
