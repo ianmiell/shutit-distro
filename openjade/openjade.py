@@ -58,6 +58,6 @@ def module():
 		'shutit.tk.sd.openjade.openjade', 158844782.0104,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.docbook_sssl.docbook_sssl']
+		depends=['shutit.tk.sd.docbook_sssl.docbook_dsssl']
 	)
 
