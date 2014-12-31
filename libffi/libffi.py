@@ -4,18 +4,20 @@
 from shutit_module import ShutItModule
 
 
-class pkg_config(ShutItModule):
+class libffi(ShutItModule):
 
 
 	def is_installed(self, shutit):
 		return shutit.file_exists('/root/shutit_build/module_record/' + self.module_id + '/built')
 
 	def build(self, shutit):
-		shutit.send('mkdir -p /tmp/build/pkg_config')
-		shutit.send('cd /tmp/build/pkg_config')
-		shutit.send('wget -qO- http://pkgconfig.freedesktop.org/releases/pkgconfig-0.18.tar.gz | tar -zxf -')
-		shutit.send('cd pkgconfig-*')
-		shutit.send('./configure --prefix=/usr')
+		shutit.send('mkdir -p /tmp/build/libffi')
+		shutit.send('cd /tmp/build/libffi')
+		shutit.send('wget -qO- ftp://sourceware.org/pub/libffi/libffi-3.2.1.tar.gz | tar -zxf -')
+		shutit.send('cd libffi-*')
+		shutit.send("sed -e '/^includesdir/ s/$(libdir).*$/$(includedir)/' -i include/Makefile.in")
+		shutit.send("sed -e '/^includedir/ s/=.*$/=@includedir@/' -e 's/^Cflags: -I${includedir}/Cflags:/' -i libffi.pc.in")
+		shutit.send('./configure --prefix=/usr --disable-static')
 		shutit.send('make')
 		shutit.send('make install')
 		return True
@@ -34,7 +36,7 @@ class pkg_config(ShutItModule):
 	#	return True
 
 	def finalize(self, shutit):
-		shutit.send('rm -rf /tmp/build/pkg_config')
+		#shutit.send('rm -rf
 		return True
 
 	#def remove(self, shutit):
@@ -44,10 +46,10 @@ class pkg_config(ShutItModule):
 	#	return True
 
 def module():
-	return pkg_config(
-		'shutit.tk.sd.pkg_config.pkg_config', 158844782.00031,
+	return libffi(
+		'shutit.tk.sd.libffi.libffi', 158844782.0016,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.setup']
+		depends=['shutit.tk.sd.pkg_config.pkg_config']
 	)
 

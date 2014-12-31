@@ -4,18 +4,18 @@
 from shutit_module import ShutItModule
 
 
-class pkg_config(ShutItModule):
+class pixman(ShutItModule):
 
 
 	def is_installed(self, shutit):
 		return shutit.file_exists('/root/shutit_build/module_record/' + self.module_id + '/built')
 
 	def build(self, shutit):
-		shutit.send('mkdir -p /tmp/build/pkg_config')
-		shutit.send('cd /tmp/build/pkg_config')
-		shutit.send('wget -qO- http://pkgconfig.freedesktop.org/releases/pkgconfig-0.18.tar.gz | tar -zxf -')
-		shutit.send('cd pkgconfig-*')
-		shutit.send('./configure --prefix=/usr')
+		shutit.send('mkdir -p /tmp/build/pixman')
+		shutit.send('cd /tmp/build/pixman')
+		shutit.send('wget -qO- http://cairographics.org/releases/pixman-0.32.6.tar.gz | tar -zxf -')
+		shutit.send('cd pixman*')
+		shutit.send('./configure --prefix=/usr --disable-static')
 		shutit.send('make')
 		shutit.send('make install')
 		return True
@@ -33,9 +33,8 @@ class pkg_config(ShutItModule):
 	#def stop(self, shutit):
 	#	return True
 
-	def finalize(self, shutit):
-		shutit.send('rm -rf /tmp/build/pkg_config')
-		return True
+	#def finalize(self, shutit):
+	#	return True
 
 	#def remove(self, shutit):
 	#	return True
@@ -44,10 +43,10 @@ class pkg_config(ShutItModule):
 	#	return True
 
 def module():
-	return pkg_config(
-		'shutit.tk.sd.pkg_config.pkg_config', 158844782.00031,
+	return pixman(
+		'shutit.tk.sd.pixman.pixman', 158844782.0116,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.setup']
+		depends=['shutit.tk.sd.pkg_config.pkg_config']
 	)
 

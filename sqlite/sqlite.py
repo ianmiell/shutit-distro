@@ -1,27 +1,27 @@
-"""ShutIt module. See http://shutit.tk
+"""ShutIt module. See http://shutit.tk/
 """
 
 from shutit_module import ShutItModule
 
 
-class pkg_config(ShutItModule):
+class sqlite(ShutItModule):
 
 
 	def is_installed(self, shutit):
 		return shutit.file_exists('/root/shutit_build/module_record/' + self.module_id + '/built')
 
+
 	def build(self, shutit):
-		shutit.send('mkdir -p /tmp/build/pkg_config')
-		shutit.send('cd /tmp/build/pkg_config')
-		shutit.send('wget -qO- http://pkgconfig.freedesktop.org/releases/pkgconfig-0.18.tar.gz | tar -zxf -')
-		shutit.send('cd pkgconfig-*')
+		shutit.send('mkdir -p /tmp/build/sqlite')
+		shutit.send('cd /tmp/build/sqlite')
+		shutit.send('wget -qO- http://www.sqlite.org/2014/sqlite-autoconf-3080701.tar.gz | gunzip -c - | tar -xf -')
+		shutit.send('cd sqlite-autoconf-*')
 		shutit.send('./configure --prefix=/usr')
 		shutit.send('make')
 		shutit.send('make install')
 		return True
 
 	#def get_config(self, shutit):
-	#	shutit.get_config(self.module_id,'item','default')
 	#	return True
 
 	#def check_ready(self, shutit):
@@ -34,7 +34,7 @@ class pkg_config(ShutItModule):
 	#	return True
 
 	def finalize(self, shutit):
-		shutit.send('rm -rf /tmp/build/pkg_config')
+		shutit.send('rm -rf /tmp/build/sqlite')
 		return True
 
 	#def remove(self, shutit):
@@ -44,10 +44,10 @@ class pkg_config(ShutItModule):
 	#	return True
 
 def module():
-	return pkg_config(
-		'shutit.tk.sd.pkg_config.pkg_config', 158844782.00031,
+	return sqlite(
+		'shutit.tk.sd.sqlite.sqlite', 158844782.0027,
 		description='',
-		maintainer='',
-		depends=['shutit.tk.setup']
+		maintainer='ian.miell@gmail.com',
+		depends=['shutit.tk.sd.pkg_config.pkg_config']
 	)
 

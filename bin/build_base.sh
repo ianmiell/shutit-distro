@@ -1,3 +1,5 @@
 #!/bin/bash
+set -e
 cd ../base
-build --no-cache -t imiell/alfs .
+docker build --no-cache -t imiell/sd_base .
+docker push imiell/sd_base

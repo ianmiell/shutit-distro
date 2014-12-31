@@ -4,20 +4,21 @@
 from shutit_module import ShutItModule
 
 
-class pkg_config(ShutItModule):
+class cpio(ShutItModule):
 
 
 	def is_installed(self, shutit):
 		return shutit.file_exists('/root/shutit_build/module_record/' + self.module_id + '/built')
 
 	def build(self, shutit):
-		shutit.send('mkdir -p /tmp/build/pkg_config')
-		shutit.send('cd /tmp/build/pkg_config')
-		shutit.send('wget -qO- http://pkgconfig.freedesktop.org/releases/pkgconfig-0.18.tar.gz | tar -zxf -')
-		shutit.send('cd pkgconfig-*')
-		shutit.send('./configure --prefix=/usr')
-		shutit.send('make')
+		shutit.send('mkdir -p /tmp/build/cpio')
+		shutit.send('cd /tmp/build/cpio')
+		shutit.send('wget -qO- http://ftp.gnu.org/pub/gnu/cpio/cpio-2.11.tar.bz2 | bunzip2 -c | tar -xf -')
+		shutit.send('cd cpio*')
+		shutit.send('''sed -i -e '/gets is a/d' gnu/stdio.in.h''')
+		shutit.send('./configure --prefix=/usr --bindir=/bin --enable-mt --with-rmt=/usr/libexec/rmt')
 		shutit.send('make install')
+		shutit.send('make')
 		return True
 
 	#def get_config(self, shutit):
@@ -33,9 +34,8 @@ class pkg_config(ShutItModule):
 	#def stop(self, shutit):
 	#	return True
 
-	def finalize(self, shutit):
-		shutit.send('rm -rf /tmp/build/pkg_config')
-		return True
+	#def finalize(self, shutit):
+	#	return True
 
 	#def remove(self, shutit):
 	#	return True
@@ -44,10 +44,10 @@ class pkg_config(ShutItModule):
 	#	return True
 
 def module():
-	return pkg_config(
-		'shutit.tk.sd.pkg_config.pkg_config', 158844782.00031,
+	return cpio(
+		'shutit.tk.sd.cpio.cpio', 158844782.0014,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.setup']
+		depends=['shutit.tk.sd.pkg_config.pkg_config']
 	)
 

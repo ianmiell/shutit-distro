@@ -1,20 +1,21 @@
-"""ShutIt module. See http://shutit.tk
+"""ShutIt module. See http://shutit.tk/
 """
 
 from shutit_module import ShutItModule
 
 
-class pkg_config(ShutItModule):
+class onigurama(ShutItModule):
 
 
 	def is_installed(self, shutit):
 		return shutit.file_exists('/root/shutit_build/module_record/' + self.module_id + '/built')
 
+
 	def build(self, shutit):
-		shutit.send('mkdir -p /tmp/build/pkg_config')
-		shutit.send('cd /tmp/build/pkg_config')
-		shutit.send('wget -qO- http://pkgconfig.freedesktop.org/releases/pkgconfig-0.18.tar.gz | tar -zxf -')
-		shutit.send('cd pkgconfig-*')
+		shutit.send('mkdir -p /tmp/build/onigurama')
+		shutit.send('cd /tmp/build/onigurama')
+		shutit.send('wget -qO- http://www.geocities.jp/kosako3/oniguruma/archive/onig-5.9.5.tar.gz | tar -zxf -')
+		shutit.send('cd onig-5.9.5')
 		shutit.send('./configure --prefix=/usr')
 		shutit.send('make')
 		shutit.send('make install')
@@ -34,7 +35,7 @@ class pkg_config(ShutItModule):
 	#	return True
 
 	def finalize(self, shutit):
-		shutit.send('rm -rf /tmp/build/pkg_config')
+		#shutit.send('rm -rf
 		return True
 
 	#def remove(self, shutit):
@@ -44,10 +45,10 @@ class pkg_config(ShutItModule):
 	#	return True
 
 def module():
-	return pkg_config(
-		'shutit.tk.sd.pkg_config.pkg_config', 158844782.00031,
+	return onigurama(
+		'shutit.tk.sd.onigurama.onigurama', 158844782.0029,
 		description='',
-		maintainer='',
-		depends=['shutit.tk.setup']
+		maintainer='ian.miell@gmail.com',
+		depends=['shutit.tk.sd.pkg_config.pkg_config']
 	)
 
