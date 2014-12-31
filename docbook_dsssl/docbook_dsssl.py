@@ -13,7 +13,7 @@ class docbook_dsssl(ShutItModule):
 	def build(self, shutit):
 		shutit.send('mkdir -p /tmp/build/docbook_dsssl')
 		shutit.send('cd /tmp/build/docbook_dsssl')
-		shutit.send('curl -L http://downloads.sourceforge.net/docbook/docbook-dsssl-1.79.tar.bz2 | bunzip2 -c | tar -xf -')
+		shutit.send('wget -qO- http://downloads.sourceforge.net/docbook/docbook-dsssl-1.79.tar.bz2 | bunzip2 -c | tar -xf -')
 		shutit.send('cd docbook*')
 		shutit.send('install -v -m755 bin/collateindex.pl /usr/bin')
 		shutit.send('install -v -m644 bin/collateindex.pl.1 /usr/share/man/man1')
