@@ -11,7 +11,7 @@ pushd ..
 find . | grep .cnf$ | xargs chmod 0600
 popd
 
-for d in pkg_config apache_portable_runtime cpio which tcl sqlite icu libffi libgpg_error libidn lzo nasm nspr onigurama pixman rsync sgml_common sharutils go expect xmlto util_macros less python2 llvm libpng fontconfig freetype2_pre_harfbuzz libjpeg x7proto xcb_proto libxau libxcb pcre glib python_pip xorg_libs libxslt
+for d in pkg_config apache_portable_runtime cpio which tcl sqlite icu libffi libgpg_error libidn lzo nasm nspr onigurama pixman rsync sgml_common sharutils go expect xmlto util_macros less python2 llvm libpng fontconfig freetype2_pre_harfbuzz libjpeg x7proto xcb_proto libxau libxcb pcre glib python_pip xorg_libs libxslt procps_ng libarchive cmake attr apache_portable_runtime_util gobject scons
 do
 	if [[ $started = "0" ]]
 	then
