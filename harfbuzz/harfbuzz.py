@@ -17,7 +17,6 @@ class harfbuzz(ShutItModule):
 		shutit.send('cd harfbuzz*')
 		shutit.send('./configure --prefix=/usr') #--with-gobject breaks, consider re-instating
 		shutit.send('make')
-		shutit.pause_point('hb-ft.h')
 		shutit.send('make install')
 		return True
 
