@@ -15,8 +15,6 @@ class pango(ShutItModule):
 		shutit.send('cd /tmp/build/pango')
 		shutit.send('wget -qO- http://ftp.gnome.org/pub/gnome/sources/pango/1.36/pango-1.36.7.tar.xz | xz -d | tar -xf -')
 		shutit.send('cd pango*')
-		shutit.send('rm /usr/lib/x86_64-linux-gnu/libgio-2.0.so')
-		shutit.send('rm /usr/lib/x86_64-linux-gnu/libgio-2.0.a')
 		shutit.send('./configure --prefix=/usr --sysconfdir=/etc')
 		shutit.send('make')
 		shutit.send('make install')
