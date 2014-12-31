@@ -18,7 +18,7 @@ class freetype2_pre_harfbuzz(ShutItModule):
 		#tar -xf ../freetype-doc-2.5.4.tar.bz2 --strip-components=2 -C docs
 		shutit.send('sed -i  -e "/AUX.*.gxvalid/s@^# @@" -e "/AUX.*.otvalid/s@^# @@" modules.cfg')
 		shutit.send(r'''sed -ri -e 's:.*(#.*SUBPIXEL.*) .*:\1:' include/config/ftoption.h''')
-		shutit.send('./configure --prefix=/usr --disable-static')
+		shutit.send('./configure --prefix=/usr --disable-static --without-harfbuzz')
 		shutit.send('make')
 		shutit.send('make install')
 		#install -v -m755 -d /usr/share/doc/freetype-2.5.4 &&
