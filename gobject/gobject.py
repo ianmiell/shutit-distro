@@ -18,7 +18,6 @@ class gobject(ShutItModule):
 		shutit.send('./configure --prefix=/usr --disable-static')
 		shutit.send('make')
 		shutit.send('make install')
-
 		return True
 
 	#def get_config(self, shutit):

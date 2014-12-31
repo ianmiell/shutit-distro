@@ -4,18 +4,20 @@
 from shutit_module import ShutItModule
 
 
-class harfbuzz(ShutItModule):
+class pango(ShutItModule):
 
 
 	def is_installed(self, shutit):
 		return shutit.file_exists('/root/shutit_build/module_record/' + self.module_id + '/built')
 
 	def build(self, shutit):
-		shutit.send('mkdir -p /tmp/build/harfbuzz')
-		shutit.send('cd /tmp/build/harfbuzz')
-		shutit.send('wget -qO- http://www.freedesktop.org/software/harfbuzz/release/harfbuzz-0.9.35.tar.bz2 | bunzip2 -c | tar -xf -')
-		shutit.send('cd harfbuzz*')
-		shutit.send('./configure --prefix=/usr') #--with-gobject breaks, consider re-instating
+		shutit.send('mkdir -p /tmp/build/pango')
+		shutit.send('cd /tmp/build/pango')
+		shutit.send('wget -qO- http://ftp.gnome.org/pub/gnome/sources/pango/1.36/pango-1.36.7.tar.xz | xz -d | tar -xf -')
+		shutit.send('cd pango*')
+		shutit.send('rm /usr/lib/x86_64-linux-gnu/libgio-2.0.so')
+		shutit.send('rm /usr/lib/x86_64-linux-gnu/libgio-2.0.a')
+		shutit.send('./configure --prefix=/usr --sysconfdir=/etc')
 		shutit.send('make')
 		shutit.send('make install')
 		return True
@@ -43,10 +45,10 @@ class harfbuzz(ShutItModule):
 	#	return True
 
 def module():
-	return harfbuzz(
-		'shutit.tk.sd.harfbuzz.harfbuzz', 158844782.00985,
+	return pango(
+		'shutit.tk.sd.pango.pango', 158844782.0119,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.icu.icu','shutit.tk.sd.gobject.gobject','shutit.tk.sd.freetype2_pre_harfbuzz.freetype2_pre_harfbuzz']
+		depends=['shutit.tk.sd.cairo.cairo','shutit.tk.sd.harfbuzz.harfbuzz','shutit.tk.sd.xorg_libs.xorg_libs','shutit.tk.sd.freetype2.freetype2','shutit.tk.sd.glib.glib','shutit.tk.sd.gobject.gobject']
 	)
 
