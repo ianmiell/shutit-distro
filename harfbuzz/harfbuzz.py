@@ -15,8 +15,9 @@ class harfbuzz(ShutItModule):
 		shutit.send('cd /tmp/build/harfbuzz')
 		shutit.send('wget -qO- http://www.freedesktop.org/software/harfbuzz/release/harfbuzz-0.9.35.tar.bz2 | bunzip2 -c | tar -xf -')
 		shutit.send('cd harfbuzz*')
+		shutit.send("sed -i '17774s/.*/PKG_CONFIG=\/usr\/bin\/pkg-config/' configure") # horrific hack to get with-glib working; seems to be required for pango?
 		shutit.send("sed -i '17874s/.*/PKG_CONFIG=\/usr\/bin\/pkg-config/' configure") # horrific hack to get with-gobject working
-		shutit.send('./configure --prefix=/usr --with-gobject')
+		shutit.send('./configure --prefix=/usr --with-gobject --with-glib')
 		shutit.send('make')
 		shutit.send('make install')
 		return True

@@ -15,4 +15,4 @@ shutit.core.module.allowed_images:["imiell/sd_.*"]
 
 # Aspects of build process
 [build]
-base_image:imiell/sd_icu
+base_image:imiell/sd_gobject
