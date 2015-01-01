@@ -60,6 +60,6 @@ def module():
 		'shutit.tk.sd.docbook_utils.docbook_utils', 158844782.0105,
 		description='',
 		maintainer='ian.miell@gmail.com',
-		depends=['shutit.tk.sd.docbook.docbook','shutit.tk.sd.openjade.openjade','shutit.tk.sd.docbook_dsssl.docbook_dsssl']
+		depends=['shutit.tk.sd.docbook_sgml_dtd.docbook_sgml_dtd','shutit.tk.sd.openjade.openjade','shutit.tk.sd.docbook_dsssl.docbook_dsssl']
 	)
 

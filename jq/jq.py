@@ -4,7 +4,7 @@
 from shutit_module import ShutItModule
 
 
-class git(ShutItModule):
+class jq(ShutItModule):
 
 
 	def is_installed(self, shutit):
@@ -12,13 +12,13 @@ class git(ShutItModule):
 
 
 	def build(self, shutit):
-		shutit.send('mkdir -p /tmp/build/git')
-		shutit.send('cd /tmp/build/git')
-		shutit.send('wget -qO- --no-check-certificate https://www.kernel.org/pub/software/scm/git/git-2.1.0.tar.xz | xz -d | tar -xf -')
-		shutit.send('cd git-*')
-		shutit.send('./configure --prefix=/usr --with-gitconfig=/etc/gitconfig')
-		#shutit.send('make prefix=/usr all doc info') # trouble with docs/docbook etc - to resolve
+		shutit.send('cd /tmp/build')
+		shutit.send('git clone https://github.com/stedolan/jq.git')
+		shutit.send('cd jq')
+		shutit.send('autoreconf -i')
+		shutit.send('./configure --prefix=/usr')
 		shutit.send('make')
+		shutit.send('make check')
 		shutit.send('make install')
 		return True
 
@@ -45,10 +45,10 @@ class git(ShutItModule):
 	#	return True
 
 def module():
-	return git(
-		'shutit.tk.sd.git.git', 158844782.01065,
-		description='Git built from source',
+	return jq(
+		'shutit.tk.sd.jq.jq', 158844782.01075,
+		description='JQ - sed for JSON',
 		maintainer='ian.miell@gmail.com',
-		depends=['shutit.tk.sd.python2.python2','shutit.tk.sd.curl.curl','shutit.tk.sd.asciidoc.asciidoc','shutit.tk.sd.xmlto.xmlto','shutit.tk.sd.docbook_utils.docbook_utils']
+		depends=['shutit.tk.sd.git.git','shutit.tk.sd.onigurama.onigurama']
 	)
 

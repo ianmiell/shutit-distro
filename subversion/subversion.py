@@ -43,7 +43,7 @@ class subversion(ShutItModule):
 	def test(self, shutit):
 		shutit.send('mkdir -p /tmp/shutit')
 		shutit.send('cd /tmp/shutit')
-		shutit.send('svn co https://github.com/ianmiell/shutit')
+		shutit.multisend('svn co https://github.com/ianmiell/shutit',{'ermanently':'p'})
 		return True
 
 def module():
