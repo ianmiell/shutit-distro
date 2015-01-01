@@ -14,7 +14,7 @@ class xmlto(ShutItModule):
 	def build(self, shutit):
 		shutit.send('mkdir -p /tmp/build/xmlto')
 		shutit.send('cd /tmp/build/xmlto')
-		shutit.send('wget -qO- --no-check-certificate https://fedorahosted.org/releases/x/m/xmlto/xmlto-' + shutit.cfg[self.module_id]['version'] + '.tar.bz2 | bunzip2 -c | tar -xf -')
+		shutit.send('wget -qO- https://fedorahosted.org/releases/x/m/xmlto/xmlto-' + shutit.cfg[self.module_id]['version'] + '.tar.bz2 | bunzip2 -c | tar -xf -')
 		shutit.send('cd xmlto-' + shutit.cfg[self.module_id]['version'])
 		shutit.send('./configure --prefix=/usr')
 		shutit.send('make')
@@ -49,6 +49,6 @@ def module():
 		'shutit.tk.sd.xmlto.xmlto', 158844782.0055,
 		description='',
 		maintainer='ian.miell@gmail.com',
-		depends=['shutit.tk.setup']
+		depends=['shutit.tk.sd.make_certs.make_certs']
 	)
 

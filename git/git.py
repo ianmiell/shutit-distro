@@ -14,7 +14,7 @@ class git(ShutItModule):
 	def build(self, shutit):
 		shutit.send('mkdir -p /tmp/build/git')
 		shutit.send('cd /tmp/build/git')
-		shutit.send('wget -qO- --no-check-certificate https://www.kernel.org/pub/software/scm/git/git-2.1.0.tar.xz | xz -d | tar -xf -')
+		shutit.send('wget -qO- https://www.kernel.org/pub/software/scm/git/git-2.1.0.tar.xz | xz -d | tar -xf -')
 		shutit.send('cd git-*')
 		shutit.send('./configure --prefix=/usr --with-gitconfig=/etc/gitconfig')
 		#shutit.send('make prefix=/usr all doc info') # trouble with docs/docbook etc - to resolve
@@ -49,6 +49,6 @@ def module():
 		'shutit.tk.sd.git.git', 158844782.01065,
 		description='Git built from source',
 		maintainer='ian.miell@gmail.com',
-		depends=['shutit.tk.sd.python2.python2','shutit.tk.sd.curl.curl','shutit.tk.sd.asciidoc.asciidoc','shutit.tk.sd.xmlto.xmlto','shutit.tk.sd.docbook_utils.docbook_utils']
+		depends=['shutit.tk.sd.python2.python2','shutit.tk.sd.curl.curl','shutit.tk.sd.asciidoc.asciidoc','shutit.tk.sd.xmlto.xmlto','shutit.tk.sd.docbook_utils.docbook_utils','shutit.tk.sd.make_certs.make_certs']
 	)
 

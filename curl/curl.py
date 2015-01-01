@@ -14,7 +14,7 @@ class curl(ShutItModule):
 	def build(self, shutit):
 		shutit.send('mkdir -p /tmp/build/curl')
 		shutit.send('cd /tmp/build/curl')
-		shutit.send('wget -qO- --no-check-certificate http://curl.haxx.se/download/curl-7.39.0.tar.gz | tar -zxf -')
+		shutit.send('wget -qO- http://curl.haxx.se/download/curl-7.39.0.tar.gz | tar -zxf -')
 		shutit.send('cd curl-*')
 		shutit.send('./configure --prefix=/usr --disable-static --enable-threaded-resolver')
 		shutit.send('make')

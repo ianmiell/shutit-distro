@@ -11,7 +11,7 @@ class go(ShutItModule):
 	def build(self,shutit):
 		shutit.send('mkdir -p /tmp/build/go')
 		shutit.send('cd /tmp/build/go')
-		shutit.send('wget -qO- --no-check-certificate https://storage.googleapis.com/golang/go' + shutit.cfg[self.module_id]['version'] + '.src.tar.gz | tar -zxf -')
+		shutit.send('wget -qO- https://storage.googleapis.com/golang/go' + shutit.cfg[self.module_id]['version'] + '.src.tar.gz | tar -zxf -')
 		shutit.send('cd go/src/')
 		shutit.send('GOROOT_FINAL=/usr ./make.bash')
 		shutit.send('mv /tmp/build/go/go/bin/go /usr/bin')
@@ -46,6 +46,6 @@ def module():
 		'shutit.tk.sd.go.go', 158844782.0077,
 		description='Go language setup (direct from source)',
 		maintainer='ian.miell@gmail.com',
-		depends=['shutit.tk.setup']
+		depends=['shutit.tk.sd.make_certs.make_certs']
 	)
 
