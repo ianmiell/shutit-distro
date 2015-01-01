@@ -7,7 +7,7 @@ RUN git clone https://github.com/ianmiell/shutit.git
 WORKDIR shutit
 RUN pip install -r requirements.txt
 
-WORKDIR /space/git/shutitdist/pkg_config <- TODO You will need to to change this
+WORKDIR /space/git/shutitdist/make_certs <- TODO You will need to to change this
 RUN /opt/shutit/shutit build --shutit_module_path /opt/shutit/library --delivery bash
 
 CMD ["/bin/bash"] 

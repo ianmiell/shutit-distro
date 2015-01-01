@@ -33,8 +33,9 @@ class alsa_lib(ShutItModule):
 	#def stop(self, shutit):
 	#	return True
 
-	#def finalize(self, shutit):
-	#	return True
+	def finalize(self, shutit):
+		shutit.send('rm -rf /tmp/build/alsa_lib')
+		return True
 
 	#def remove(self, shutit):
 	#	return True
