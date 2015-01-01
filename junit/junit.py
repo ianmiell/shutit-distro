@@ -53,6 +53,6 @@ def module():
 		'shutit.tk.sd.junit.junit', 158844782.0126,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.ant.ant']
+		depends=['shutit.tk.sd.ant.ant','shutit.tk.sd.make_certs.make_certs']
 	)
 

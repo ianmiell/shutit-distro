@@ -19,13 +19,13 @@ class nettle(ShutItModule):
 		shutit.send('make')
 		shutit.send('make install')
 		# Using earlier version due to dep issue, so ignoring these linux from scratch lines.
-		#shutit.send('chmod -v 755 /usr/lib/libhogweed.so.2.5 /usr/lib/libnettle.so.4.7') # requires gmp
-		#shutit.send('install -v -m755 -d /usr/share/doc/nettle-2.7.1')
-		#shutit.send('install -v -m644 nettle.html /usr/share/doc/nettle-2.7.1')
+		shutit.send('chmod -v 755 /usr/lib/libhogweed.so.2.5 /usr/lib/libnettle.so.4.7')
+		shutit.send('install -v -m755 -d /usr/share/doc/nettle-2.7.1')
+		shutit.send('install -v -m644 nettle.html /usr/share/doc/nettle-2.7.1')
 		return True
 
 	def get_config(self, shutit):
-		shutit.get_config(self.module_id,'version','2.6')
+		shutit.get_config(self.module_id,'version','2.7.1')
 		return True
 
 	#def check_ready(self, shutit):
