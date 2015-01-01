@@ -48,6 +48,6 @@ def module():
 		'shutit.tk.sd.libxslt.libxslt', 158844782.0052,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.pkg_config.pkg_config']
+		depends=['shutit.tk.setup']
 	)
 

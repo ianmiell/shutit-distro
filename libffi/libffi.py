@@ -50,6 +50,6 @@ def module():
 		'shutit.tk.sd.libffi.libffi', 158844782.0016,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.pkg_config.pkg_config']
+		depends=['shutit.tk.setup']
 	)
 

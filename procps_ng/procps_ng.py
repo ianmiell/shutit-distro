@@ -52,6 +52,6 @@ def module():
 		'shutit.tk.sd.procps_ng.procps_ng', 158844782.00251,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.pkg_config.pkg_config']
+		depends=['shutit.tk.setup']
 	)
 

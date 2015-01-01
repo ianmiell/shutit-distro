@@ -51,6 +51,6 @@ def module():
 		'shutit.tk.sd.curl.curl', 158844782.00115,
 		description='curl built from source',
 		maintainer='ian.miell@gmail.com',
-		depends=['shutit.tk.sd.pkg_config.pkg_config']
+		depends=['shutit.tk.sd.make_certs.make_certs']
 	)
 

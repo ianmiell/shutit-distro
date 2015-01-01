@@ -48,6 +48,6 @@ def module():
 		'shutit.tk.sd.cpio.cpio', 158844782.0014,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.pkg_config.pkg_config']
+		depends=['shutit.tk.setup']
 	)
 

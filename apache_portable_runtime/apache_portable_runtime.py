@@ -49,6 +49,6 @@ def module():
 		'shutit.tk.sd.apache_portable_runtime.apache_portable_runtime', 158844782.0049,
 		description='',
 		maintainer='ian.miell@gmail.com',
-		depends=['shutit.tk.sd.pkg_config.pkg_config']
+		depends=['shutit.tk.setup']
 	)
 

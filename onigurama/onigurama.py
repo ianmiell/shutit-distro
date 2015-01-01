@@ -49,6 +49,6 @@ def module():
 		'shutit.tk.sd.onigurama.onigurama', 158844782.0029,
 		description='',
 		maintainer='ian.miell@gmail.com',
-		depends=['shutit.tk.sd.pkg_config.pkg_config']
+		depends=['shutit.tk.setup']
 	)
 

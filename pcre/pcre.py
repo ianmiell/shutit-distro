@@ -49,6 +49,6 @@ def module():
 		'shutit.tk.sd.pcre.pcre', 158844782.002545,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.pkg_config.pkg_config']
+		depends=['shutit.tk.setup']
 	)
 

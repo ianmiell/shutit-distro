@@ -57,6 +57,6 @@ def module():
 		'shutit.tk.sd.tcl.tcl', 158844782.002,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.pkg_config.pkg_config']
+		depends=['shutit.tk.setup']
 	)
 

@@ -47,6 +47,6 @@ def module():
 		'shutit.tk.sd.lzo.lzo', 158844782.0005,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.pkg_config.pkg_config']
+		depends=['shutit.tk.setup']
 	)
 

@@ -48,6 +48,6 @@ def module():
 		'shutit.tk.sd.libgpg_error.libgpg_error', 158844782.00135,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.pkg_config.pkg_config']
+		depends=['shutit.tk.setup']
 	)
 

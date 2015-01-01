@@ -47,6 +47,6 @@ def module():
 		'shutit.tk.sd.util_macros.util_macros', 158844782.0019,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.pkg_config.pkg_config']
+		depends=['shutit.tk.setup']
 	)
 

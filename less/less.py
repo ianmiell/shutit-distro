@@ -47,6 +47,6 @@ def module():
 		'shutit.tk.sd.less.less', 158844782.0056,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.pkg_config.pkg_config']
+		depends=['shutit.tk.setup']
 	)
 

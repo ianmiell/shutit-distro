@@ -48,6 +48,6 @@ def module():
 		'shutit.tk.sd.libpng.libpng', 158844782.0084,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.pkg_config.pkg_config']
+		depends=['shutit.tk.setup']
 	)
 

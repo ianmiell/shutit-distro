@@ -46,6 +46,6 @@ def module():
 		'shutit.tk.sd.which.which', 158844782.0015,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.pkg_config.pkg_config']
+		depends=['shutit.tk.setup']
 	)
 

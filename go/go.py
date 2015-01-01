@@ -46,6 +46,6 @@ def module():
 		'shutit.tk.sd.go.go', 158844782.0077,
 		description='Go language setup (direct from source)',
 		maintainer='ian.miell@gmail.com',
-		depends=['shutit.tk.sd.pkg_config.pkg_config']
+		depends=['shutit.tk.setup']
 	)
 
