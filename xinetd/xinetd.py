@@ -43,7 +43,7 @@ class xinetd(ShutItModule):
 
 def module():
 	return xinetd(
-		'shutit.tk.sd.xinetd.xinetd', 158844782.0251,
+		'shutit.tk.sd.xinetd.xinetd', 158844782.0252,
 		description='',
 		maintainer='',
 		depends=['shutit.tk.setup']
