@@ -22,15 +22,6 @@ class go(ShutItModule):
 		shutit.get_config(self.module_id,'version','1.3.3')
 		return True
 
-	#def check_ready(self,shutit):
-	#    return True
-	
-	#def start(self,shutit):
-	#    return True
-
-	#def stop(self,shutit):
-	#    return True
-
 	def finalize(self, shutit):
 		shutit.send('rm -rf /tmp/build/go')
 		return True

@@ -13,15 +13,9 @@ class nss(ShutItModule):
 	def build(self, shutit):
 		shutit.send('mkdir -p /tmp/build/nss')
 		shutit.send('cd /tmp/build/nss')
-<<<<<<< HEAD
-		shutit.send('wget -qO- http://ftp.mozilla.org/pub/mozilla.org/security/nss/releases/NSS_3_17_RTM/src/nss-3.17.tar.gz | tar -zxf -')
-		shutit.send('cd nss*')
-		shutit.send('wget -qO- http://www.linuxfromscratch.org/patches/blfs/7.6/nss-3.17-standalone-1.patch | patch -Np1 -i -')
-=======
 		shutit.send('wget -qO- http://ftp.mozilla.org/pub/mozilla.org/security/nss/releases/NSS_3_17_3_RTM/src/nss-3.17.3.tar.gz | tar -zxf -')
 		shutit.send('cd nss*')
 		shutit.send('wget -qO-  http://www.linuxfromscratch.org/patches/blfs/svn/nss-3.17.3-standalone-1.patch | patch -Np1 -i -')
->>>>>>> 47c218b317829a0b40aa841d9801114142c91be2
 		shutit.send('cd nss')
 		shutit.send('make BUILD_OPT=1 NSPR_INCLUDE_DIR=/usr/include/nspr USE_SYSTEM_ZLIB=1 ZLIB_LIBS=-lz $([ $(uname -m) = x86_64 ] && echo USE_64=1) $([ -f /usr/include/sqlite3.h ] && echo NSS_USE_SYSTEM_SQLITE=1) -j1')
 		shutit.send('cd ../dist')
@@ -38,23 +32,9 @@ class nss(ShutItModule):
 	#	shutit.get_config(self.module_id,'item','default')
 	#	return True
 
-	#def check_ready(self, shutit):
-	#	return True
-	
-	#def start(self, shutit):
-	#	return True
-
-	#def stop(self, shutit):
-	#	return True
-
-<<<<<<< HEAD
-	#def finalize(self, shutit):
-	#	return True
-=======
 	def finalize(self, shutit):
 		shutit.send('rm -rf /tmp/build/nss')
 		return True
->>>>>>> 47c218b317829a0b40aa841d9801114142c91be2
 
 	#def remove(self, shutit):
 	#	return True

@@ -25,23 +25,9 @@ class giflib(ShutItModule):
 	#	shutit.get_config(self.module_id,'item','default')
 	#	return True
 
-	#def check_ready(self, shutit):
-	#	return True
-	
-	#def start(self, shutit):
-	#	return True
-
-	#def stop(self, shutit):
-	#	return True
-
-<<<<<<< HEAD
-	#def finalize(self, shutit):
-	#	return True
-=======
 	def finalize(self, shutit):
 		shutit.send('rm -rf /tmp/build/giflib')
 		return True
->>>>>>> 47c218b317829a0b40aa841d9801114142c91be2
 
 	#def remove(self, shutit):
 	#	return True

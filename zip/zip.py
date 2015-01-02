@@ -49,15 +49,6 @@ class zip(ShutItModule):
 		return True
 >>>>>>> 47c218b317829a0b40aa841d9801114142c91be2
 
-	#def check_ready(self, shutit):
-	#	return True
-	
-	#def start(self, shutit):
-	#	return True
-
-	#def stop(self, shutit):
-	#	return True
-
 	def finalize(self, shutit):
 <<<<<<< HEAD
 		#shutit.send('rm -rf
