@@ -27,15 +27,6 @@ class curl(ShutItModule):
 	#def get_config(self, shutit):
 	#	return True
 
-	#def check_ready(self, shutit):
-	#	return True
-	
-	#def start(self, shutit):
-	#	return True
-
-	#def stop(self, shutit):
-	#	return True
-
 	def finalize(self, shutit):
 		shutit.send('rm -rf /tmp/build/curl')
 		return True

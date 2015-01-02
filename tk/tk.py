@@ -29,15 +29,6 @@ class tk(ShutItModule):
 	#	shutit.get_config(self.module_id,'item','default')
 	#	return True
 
-	#def check_ready(self, shutit):
-	#	return True
-	
-	#def start(self, shutit):
-	#	return True
-
-	#def stop(self, shutit):
-	#	return True
-
 	def finalize(self, shutit):
 		shutit.send('rm -rf /tmp/build/tk')
 		return True
@@ -50,9 +41,9 @@ class tk(ShutItModule):
 
 def module():
 	return tk(
-		'shutit.tk.sd.tk.tk', 158844782.0021,
+		'shutit.tk.sd.tk.tk', 158844782.010775,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.tcl.tcl','xorg required']
+		depends=['shutit.tk.sd.tcl.tcl','shutit.tk.sd.xorg_libs.xorg_libs']
 	)
 

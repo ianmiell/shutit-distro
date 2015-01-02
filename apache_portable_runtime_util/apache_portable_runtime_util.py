@@ -25,15 +25,6 @@ class apache_portable_runtime_util(ShutItModule):
 		shutit.get_config(self.module_id,'version','1.5.4')
 		return True
 
-	#def check_ready(self, shutit):
-	#	return True
-	
-	#def start(self, shutit):
-	#	return True
-
-	#def stop(self, shutit):
-	#	return True
-
 	def finalize(self, shutit):
 		shutit.send('rm -rf /tmp/build/apr-util')
 		return True

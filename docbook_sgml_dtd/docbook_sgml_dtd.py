@@ -30,15 +30,6 @@ class docbook_sgml_dtd(ShutItModule):
 		shutit.get_config(self.module_id,'version','4.5')
 		return True
 
-	#def check_ready(self, shutit):
-	#	return True
-	
-	#def start(self, shutit):
-	#	return True
-
-	#def stop(self, shutit):
-	#	return True
-
 	def finalize(self, shutit):
 		shutit.send('rm -rf /tmp/build/docbook_sgml_dtd')
 		return True

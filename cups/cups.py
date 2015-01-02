@@ -36,9 +36,6 @@ class cups(ShutItModule):
 	#	shutit.get_config(self.module_id,'item','default')
 	#	return True
 
-	#def check_ready(self, shutit):
-	#	return True
-	
 	#def start(self, shutit):
 	#	return True
 

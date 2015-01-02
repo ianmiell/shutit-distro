@@ -17,23 +17,12 @@ class python2(ShutItModule):
 		shutit.send('cd Python-*')
 		shutit.send('./configure --prefix=/usr --enable-shared --with-system-expat --with-system-ffi --enable-unicode=ucs4')
 		shutit.send('make')
-		#shutit.send('wget -qO- http://www.linuxfromscratch.org/patches/blfs/svn/Python-2.7.9-skip_test_gdb-1.patch | patch -Np1 -i -')
-		#shutit.send('make test')
 		shutit.send('make install',check_exit=False) # why? seems ok
 		shutit.send('chmod -v 755 /usr/lib/libpython2.7.so.1.0')
 		return True
 
 	#def get_config(self, shutit):
 	#	shutit.get_config(self.module_id,'item','default')
-	#	return True
-
-	#def check_ready(self, shutit):
-	#	return True
-	
-	#def start(self, shutit):
-	#	return True
-
-	#def stop(self, shutit):
 	#	return True
 
 	def finalize(self, shutit):

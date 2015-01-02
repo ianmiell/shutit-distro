@@ -28,12 +28,6 @@ class subversion(ShutItModule):
 	#def check_ready(self, shutit):
 	#	return True
 	
-	#def start(self, shutit):
-	#	return True
-
-	#def stop(self, shutit):
-	#	return True
-
 	def finalize(self, shutit):
 		shutit.send('rm -rf /tmp/build/subversion')
 		return True
