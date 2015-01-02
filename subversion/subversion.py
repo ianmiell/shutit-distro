@@ -35,6 +35,7 @@ class subversion(ShutItModule):
 	#	return True
 
 	def finalize(self, shutit):
+		shutit.send('rm -rf /tmp/build/subversion')
 		return True
 
 	#def remove(self, shutit):

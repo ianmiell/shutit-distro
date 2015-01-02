@@ -34,7 +34,7 @@ class ruby(ShutItModule):
 	#	return True
 
 	def finalize(self, shutit):
-		#shutit.send('rm -rf
+		shutit.send('rm -rf /tmp/build/ruby')
 		return True
 
 	#def remove(self, shutit):

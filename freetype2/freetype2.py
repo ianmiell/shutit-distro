@@ -38,8 +38,9 @@ class freetype2(ShutItModule):
 	#def stop(self, shutit):
 	#	return True
 
-	#def finalize(self, shutit):
-	#	return True
+	def finalize(self, shutit):
+		shutit.send('rm -rf /tmp/build/freetype2')
+		return True
 
 	#def remove(self, shutit):
 	#	return True

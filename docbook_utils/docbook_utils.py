@@ -46,6 +46,9 @@ class docbook_utils(ShutItModule):
 	#	return True
 
 	def finalize(self, shutit):
+		shutit.send('rm -rf /tmp/build/docbook_utils')
+		return True
+	def finalize(self, shutit):
 		#shutit.send('rm -rf
 		return True
 

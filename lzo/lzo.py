@@ -33,8 +33,9 @@ class lzo(ShutItModule):
 	#def stop(self, shutit):
 	#	return True
 
-	#def finalize(self, shutit):
-	#	return True
+	def finalize(self, shutit):
+		shutit.send('rm -rf /tmp/build/lzo')
+		return True
 
 	#def remove(self, shutit):
 	#	return True

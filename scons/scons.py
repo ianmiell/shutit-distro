@@ -16,10 +16,6 @@ class scons(ShutItModule):
 		shutit.send('cd /tmp/build/scons')
 		shutit.send('wget -qO- http://sourceforge.net/projects/scons/files/scons/2.3.4/scons-2.3.4.tar.gz | tar -zxf -')
 		shutit.send('cd scons-*')
-		#shutit.send('mkdir -p /tmp/pip_build_root/lxml/src/lxml/includes')
-		#shutit.send('cp -r /tmp/build/libxml2/libxml2-2.9.2/include/libxml /tmp/pip_build_root/lxml/src/lxml/includes')
-		#shutit.send('cp -r /tmp/build/libxslt/libxslt-1.1.28 /tmp/pip_build_root/lxml/src/lxml/includes')
-		#shutit.send('pip install lxml')
 		shutit.send('python setup.py install --prefix=/usr --standard-lib --optimize=1 --install-data=/usr/share')
 		return True
 
@@ -36,7 +32,7 @@ class scons(ShutItModule):
 	#	return True
 
 	def finalize(self, shutit):
-		#shutit.send('rm -rf
+		shutit.send('rm -rf /tmp/build/scons')
 		return True
 
 	#def remove(self, shutit):

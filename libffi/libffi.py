@@ -36,7 +36,7 @@ class libffi(ShutItModule):
 	#	return True
 
 	def finalize(self, shutit):
-		#shutit.send('rm -rf
+		shutit.send('rm -rf /tmp/build/libffi')
 		return True
 
 	#def remove(self, shutit):

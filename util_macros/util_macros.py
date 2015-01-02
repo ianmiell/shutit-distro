@@ -33,8 +33,9 @@ class util_macros(ShutItModule):
 	#def stop(self, shutit):
 	#	return True
 
-	#def finalize(self, shutit):
-	#	return True
+	def finalize(self, shutit):
+		shutit.send('rm -rf /tmp/build/util_macros')
+		return True
 
 	#def remove(self, shutit):
 	#	return True

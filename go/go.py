@@ -31,8 +31,8 @@ class go(ShutItModule):
 	#def stop(self,shutit):
 	#    return True
 
-	def finalize(self,shutit):
-		#shutit.send('rm -rf
+	def finalize(self, shutit):
+		shutit.send('rm -rf /tmp/build/go')
 		return True
 
 	#def remove(self,shutit):

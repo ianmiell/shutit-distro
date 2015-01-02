@@ -35,7 +35,7 @@ class xmlto(ShutItModule):
 	#	return True
 
 	def finalize(self, shutit):
-		#shutit.send('rm -rf /tmp/build/xmlto')
+		shutit.send('rm -rf /tmp/build/xmlto')
 		return True
 
 	#def remove(self, shutit):

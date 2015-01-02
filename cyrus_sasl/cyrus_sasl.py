@@ -36,8 +36,9 @@ class cyrus_sasl(ShutItModule):
 	#def stop(self, shutit):
 	#	return True
 
-	#def finalize(self, shutit):
-	#	return True
+	def finalize(self, shutit):
+		shutit.send('rm -rf /tmp/build/cyrus_sasl')
+		return True
 
 	#def remove(self, shutit):
 	#	return True

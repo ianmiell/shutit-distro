@@ -35,7 +35,7 @@ class onigurama(ShutItModule):
 	#	return True
 
 	def finalize(self, shutit):
-		#shutit.send('rm -rf
+		shutit.send('rm -rf /tmp/build/onigurama')
 		return True
 
 	#def remove(self, shutit):

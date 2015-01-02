@@ -37,8 +37,9 @@ class docbook_dsssl(ShutItModule):
 	#def stop(self, shutit):
 	#	return True
 
-	#def finalize(self, shutit):
-	#	return True
+	def finalize(self, shutit):
+		shutit.send('rm -rf /tmp/build/docbook_dsssl')
+		return True
 
 	#def remove(self, shutit):
 	#	return True

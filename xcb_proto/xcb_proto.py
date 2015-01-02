@@ -33,8 +33,9 @@ class xcb_proto(ShutItModule):
 	#def stop(self, shutit):
 	#	return True
 
-	#def finalize(self, shutit):
-	#	return True
+	def finalize(self, shutit):
+		shutit.send('rm -rf /tmp/build/xcb_proto')
+		return True
 
 	#def remove(self, shutit):
 	#	return True

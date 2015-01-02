@@ -35,7 +35,7 @@ class git(ShutItModule):
 	#	return True
 
 	def finalize(self, shutit):
-		#shutit.send('rm -rf
+		shutit.send('rm -rf /tmp/build/git')
 		return True
 
 	#def remove(self, shutit):

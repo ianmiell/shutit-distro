@@ -38,7 +38,7 @@ class sgml_common(ShutItModule):
 	#	return True
 
 	def finalize(self, shutit):
-		#shutit.send('rm -rf
+		shutit.send('rm -rf /tmp/build/sgml_common')
 		return True
 
 	#def remove(self, shutit):

@@ -37,6 +37,7 @@ class python2(ShutItModule):
 	#	return True
 
 	def finalize(self, shutit):
+		shutit.send('rm -rf /tmp/build/python')
 		return True
 
 	#def remove(self, shutit):

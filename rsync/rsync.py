@@ -35,7 +35,7 @@ class rsync(ShutItModule):
 	#	return True
 
 	def finalize(self, shutit):
-		#shutit.send('rm -rf
+		shutit.send('rm -rf /tmp/build/rsync')
 		return True
 
 	#def remove(self, shutit):
