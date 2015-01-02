@@ -19,9 +19,6 @@ class boost(ShutItModule):
 		shutit.send('./bootstrap.sh --prefix=/usr')
 		shutit.send('./b2 stage threading=multi link=shared')
 		shutit.send('./b2 install threading=multi link=shared')
-		shutit.send('./configure --prefix=/usr')
-		shutit.send('make')
-		shutit.send('make install')
 		return True
 
 	#def get_config(self, shutit):
