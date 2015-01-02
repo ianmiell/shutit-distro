@@ -31,14 +31,14 @@ do
 		fi
 	fi
 	pushd ../$d/bin
-	echo "BEGIN $d $(date)" >> /tmp/shutitdistout
-	./build_and_push.sh >> /tmp/shutitdistout
+	echo "BEGIN $d $(date)"
+	./build_and_push.sh
 	if [[ $? != 0 ]]
 	then
-		echo "FAILED $d" >> /tmp/shutitdistout
+		echo "FAILED $d"
 		exit 1
 	fi
-	echo "DONE $d $(date)" >> /tmp/shutitdistout
+	echo "DONE $d $(date)"
 	popd
 done
 

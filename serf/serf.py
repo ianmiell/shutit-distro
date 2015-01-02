@@ -27,11 +27,7 @@ class serf(ShutItModule):
 	#	return True
 
 	def finalize(self, shutit):
-<<<<<<< HEAD
-		#shutit.send('rm -rf
-=======
 		shutit.send('rm -rf /tmp/build/serf')
->>>>>>> 47c218b317829a0b40aa841d9801114142c91be2
 		return True
 
 	#def remove(self, shutit):
