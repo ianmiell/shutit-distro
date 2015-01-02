@@ -11,11 +11,14 @@ class xorg_libs(ShutItModule):
 		return shutit.file_exists('/root/shutit_build/module_record/' + self.module_id + '/built')
 
 	def build(self, shutit):
+		import sd_util
+		sd_util.setup_x_environment(shutit)
 		shutit.send('mkdir -p /tmp/build/xorg_libs')
 		shutit.send('cd /tmp/build/xorg_libs')
 		shutit.send_host_file('/tmp/build/xorg_libs/lib-7.7.md5','context/lib-7.7.md5')
 		shutit.send('''grep -v '^#' lib-7.7.md5 | awk '{print $2}' | wget -i- -c -B http://xorg.freedesktop.org/releases/individual/lib/''')
 		shutit.send('md5sum -c lib-7.7.md5')
+		shutit.login(command='bash -e')
 		shutit.run_script(r'''for package in $(grep -v '^#' lib-7.7.md5 | awk '{print $2}')
 		do
 		  packagedir=${package%.tar.bz2}
@@ -38,6 +41,7 @@ class xorg_libs(ShutItModule):
 		  rm -rf $packagedir
 		  /sbin/ldconfig
 		done''')
+		shutit.logout()
 		return True
 
 	#def get_config(self, shutit):
@@ -53,8 +57,9 @@ class xorg_libs(ShutItModule):
 	#def stop(self, shutit):
 	#	return True
 
-	#def finalize(self, shutit):
-	#	return True
+	def finalize(self, shutit):
+		shutit.send('rm -rf /tmp/build/xorg_libs')
+		return True
 
 	#def remove(self, shutit):
 	#	return True

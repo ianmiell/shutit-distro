@@ -46,6 +46,12 @@ class docbook_utils(ShutItModule):
 	#	return True
 
 	def finalize(self, shutit):
+<<<<<<< HEAD
+=======
+		shutit.send('rm -rf /tmp/build/docbook_utils')
+		return True
+	def finalize(self, shutit):
+>>>>>>> 47c218b317829a0b40aa841d9801114142c91be2
 		#shutit.send('rm -rf
 		return True
 
@@ -60,6 +66,10 @@ def module():
 		'shutit.tk.sd.docbook_utils.docbook_utils', 158844782.0105,
 		description='',
 		maintainer='ian.miell@gmail.com',
+<<<<<<< HEAD
 		depends=['shutit.tk.sd.docbook.docbook','shutit.tk.sd.openjade.openjade','shutit.tk.sd.docbook_dsssl.docbook_dsssl']
+=======
+		depends=['shutit.tk.sd.docbook_sgml_dtd.docbook_sgml_dtd','shutit.tk.sd.openjade.openjade','shutit.tk.sd.docbook_dsssl.docbook_dsssl']
+>>>>>>> 47c218b317829a0b40aa841d9801114142c91be2
 	)
 

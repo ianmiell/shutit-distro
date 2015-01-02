@@ -35,6 +35,10 @@ class subversion(ShutItModule):
 	#	return True
 
 	def finalize(self, shutit):
+<<<<<<< HEAD
+=======
+		shutit.send('rm -rf /tmp/build/subversion')
+>>>>>>> 47c218b317829a0b40aa841d9801114142c91be2
 		return True
 
 	#def remove(self, shutit):
@@ -43,7 +47,11 @@ class subversion(ShutItModule):
 	def test(self, shutit):
 		shutit.send('mkdir -p /tmp/shutit')
 		shutit.send('cd /tmp/shutit')
+<<<<<<< HEAD
 		shutit.send('svn co https://github.com/ianmiell/shutit')
+=======
+		shutit.multisend('svn co https://github.com/ianmiell/shutit',{'ermanently':'p'})
+>>>>>>> 47c218b317829a0b40aa841d9801114142c91be2
 		return True
 
 def module():

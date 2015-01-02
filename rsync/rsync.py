@@ -35,7 +35,7 @@ class rsync(ShutItModule):
 	#	return True
 
 	def finalize(self, shutit):
-		#shutit.send('rm -rf
+		shutit.send('rm -rf /tmp/build/rsync')
 		return True
 
 	#def remove(self, shutit):
@@ -49,6 +49,6 @@ def module():
 		'shutit.tk.sd.rsync.rsync', 158844782.003,
 		description='',
 		maintainer='ian.miell@gmail.com',
-		depends=['shutit.tk.sd.pkg_config.pkg_config']
+		depends=['shutit.tk.setup']
 	)
 

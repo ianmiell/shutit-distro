@@ -14,7 +14,7 @@ class apache_portable_runtime(ShutItModule):
 	def build(self, shutit):
 		shutit.send('mkdir -p /tmp/build/apr')
 		shutit.send('cd /tmp/build/apr')
-		shutit.send('wget -qI- http://apache.mirrors.timporter.net//apr/apr-' + shutit.cfg[self.module_id]['version'] + '.tar.gz | tar -zxf -')
+		shutit.send('wget -qO- http://apache.mirrors.timporter.net//apr/apr-' + shutit.cfg[self.module_id]['version'] + '.tar.gz | tar -zxf -')
 		shutit.send('cd apr-' + shutit.cfg[self.module_id]['version'])
 		shutit.send('./configure --prefix=/usr')
 		shutit.send('make')
@@ -49,6 +49,6 @@ def module():
 		'shutit.tk.sd.apache_portable_runtime.apache_portable_runtime', 158844782.0049,
 		description='',
 		maintainer='ian.miell@gmail.com',
-		depends=['shutit.tk.sd.pkg_config.pkg_config']
+		depends=['shutit.tk.setup']
 	)
 

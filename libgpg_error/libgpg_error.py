@@ -34,8 +34,9 @@ class libgpg_error(ShutItModule):
 	#def stop(self, shutit):
 	#	return True
 
-	#def finalize(self, shutit):
-	#	return True
+	def finalize(self, shutit):
+		shutit.send('rm -rf /tmp/build/libgpg_error')
+		return True
 
 	#def remove(self, shutit):
 	#	return True
@@ -48,6 +49,6 @@ def module():
 		'shutit.tk.sd.libgpg_error.libgpg_error', 158844782.00135,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.pkg_config.pkg_config']
+		depends=['shutit.tk.setup']
 	)
 

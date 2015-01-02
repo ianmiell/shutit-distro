@@ -10,4 +10,10 @@ from shutit_module import ShutItModule
 def setup_x_environment(shutit):
 	shutit.send('export XORG_PREFIX=/usr')
 	shutit.send('export XORG_CONFIG="--prefix=$XORG_PREFIX --sysconfdir=/etc --localstatedir=/var --disable-static"')
+	shutit.send('mkdir -p /etc/profile.d')
+	shutit.send('touch /etc/profile.d/xorg.sh')
+	shutit.add_line_to_file('/etc/profile.d/xorg.sh','XORG_PREFIX="/usr"')
+	shutit.add_line_to_file('/etc/profile.d/xorg.sh','XORG_CONFIG="--prefix=$XORG_PREFIX --sysconfdir=/etc --localstatedir=/var --disable-static"')
+	shutit.add_line_to_file('/etc/profile.d/xorg.sh','export XORG_PREFIX XORG_CONFIG')
+	shutit.send('chmod 644 /etc/profile.d/xorg.sh')
 

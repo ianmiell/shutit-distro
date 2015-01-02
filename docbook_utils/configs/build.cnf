@@ -7,11 +7,19 @@
 ###############################################################################
 # When this module is the one being built, which modules should be built along with it by default?
 # This feeds into automated testing of each module.
+<<<<<<< HEAD
 [shutit.tk.sd.docbook.docbook]
 shutit.core.module.build:yes
 # Allowed images as a regexp, eg ["ubuntu:12.*"], or [".*"], or ["centos"].
 # It's recommended this is locked down as far as possible.
 shutit.core.module.allowed_images:["debian.*","imiell/sd_.*","imiell/alfs"]
+=======
+[shutit.tk.sd.docbook_utils.docbook_utils]
+shutit.core.module.build:yes
+# Allowed images as a regexp, eg ["ubuntu:12.*"], or [".*"], or ["centos"].
+# It's recommended this is locked down as far as possible.
+shutit.core.module.allowed_images:["imiell/sd_.*"]
+>>>>>>> 47c218b317829a0b40aa841d9801114142c91be2
 
 # Aspects of build process
 [build]

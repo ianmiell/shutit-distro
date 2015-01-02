@@ -33,8 +33,9 @@ class util_macros(ShutItModule):
 	#def stop(self, shutit):
 	#	return True
 
-	#def finalize(self, shutit):
-	#	return True
+	def finalize(self, shutit):
+		shutit.send('rm -rf /tmp/build/util_macros')
+		return True
 
 	#def remove(self, shutit):
 	#	return True
@@ -47,6 +48,6 @@ def module():
 		'shutit.tk.sd.util_macros.util_macros', 158844782.0019,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.pkg_config.pkg_config']
+		depends=['shutit.tk.setup']
 	)
 

@@ -35,8 +35,9 @@ class pcre(ShutItModule):
 	#def stop(self, shutit):
 	#	return True
 
-	#def finalize(self, shutit):
-	#	return True
+	def finalize(self, shutit):
+		shutit.send('rm -rf /tmp/build/pcre')
+		return True
 
 	#def remove(self, shutit):
 	#	return True
@@ -49,6 +50,6 @@ def module():
 		'shutit.tk.sd.pcre.pcre', 158844782.002545,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.pkg_config.pkg_config']
+		depends=['shutit.tk.setup']
 	)
 

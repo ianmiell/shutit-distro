@@ -36,8 +36,9 @@ class nspr(ShutItModule):
 	#def stop(self, shutit):
 	#	return True
 
-	#def finalize(self, shutit):
-	#	return True
+	def finalize(self, shutit):
+		shutit.send('rm -rf /tmp/build/nspr')
+		return True
 
 	#def remove(self, shutit):
 	#	return True
@@ -50,6 +51,6 @@ def module():
 		'shutit.tk.sd.nspr.nspr', 158844782.0129,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.pkg_config.pkg_config']
+		depends=['shutit.tk.setup']
 	)
 

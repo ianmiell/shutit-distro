@@ -43,8 +43,14 @@ class opensp(ShutItModule):
 	#def stop(self, shutit):
 	#	return True
 
+<<<<<<< HEAD
 	#def finalize(self, shutit):
 	#	return True
+=======
+	def finalize(self, shutit):
+		shutit.send('rm -rf /tmp/build/opensp')
+		return True
+>>>>>>> 47c218b317829a0b40aa841d9801114142c91be2
 
 	#def remove(self, shutit):
 	#	return True

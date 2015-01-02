@@ -15,4 +15,8 @@ shutit.core.module.allowed_images:["imiell/sd_.*"]
 
 # Aspects of build process
 [build]
+<<<<<<< HEAD
 base_image:imiell/sd_pkg_config
+=======
+base_image:imiell/sd_base
+>>>>>>> 47c218b317829a0b40aa841d9801114142c91be2

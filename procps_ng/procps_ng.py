@@ -38,8 +38,9 @@ class procps_ng(ShutItModule):
 	#def stop(self, shutit):
 	#	return True
 
-	#def finalize(self, shutit):
-	#	return True
+	def finalize(self, shutit):
+		shutit.send('rm -rf /tmp/build/procps_ng')
+		return True
 
 	#def remove(self, shutit):
 	#	return True
@@ -52,6 +53,6 @@ def module():
 		'shutit.tk.sd.procps_ng.procps_ng', 158844782.00251,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.pkg_config.pkg_config']
+		depends=['shutit.tk.setup']
 	)
 

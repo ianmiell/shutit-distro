@@ -38,7 +38,7 @@ class sgml_common(ShutItModule):
 	#	return True
 
 	def finalize(self, shutit):
-		#shutit.send('rm -rf
+		shutit.send('rm -rf /tmp/build/sgml_common')
 		return True
 
 	#def remove(self, shutit):
@@ -52,6 +52,6 @@ def module():
 		'shutit.tk.sd.sgml_common.sgml_common', 158844782.0034,
 		description='',
 		maintainer='ian.miell@gmail.com',
-		depends=['shutit.tk.sd.pkg_config.pkg_config']
+		depends=['shutit.tk.setup']
 	)
 

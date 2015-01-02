@@ -18,8 +18,6 @@ class glib(ShutItModule):
 		shutit.send('./configure --prefix=/usr --with-pcre=system')
 		shutit.send('make')
 		shutit.send('make install')
-		# Remove old glib.so's to avoid confusion (eg atk and pango breaks later otherwise)
-		#shutit.send('rm -f /lib/x86_64-linux-gnu/libglib-2.0.so.0 /usr/lib/x86_64-linux-gnu/libgio-2.0.a /usr/lib/x86_64-linux-gnu/libgio-2.0.so')
 		return True
 
 	#def get_config(self, shutit):
@@ -35,8 +33,9 @@ class glib(ShutItModule):
 	#def stop(self, shutit):
 	#	return True
 
-	#def finalize(self, shutit):
-	#	return True
+	def finalize(self, shutit):
+		shutit.send('rm -rf /tmp/build/glib')
+		return True
 
 	#def remove(self, shutit):
 	#	return True

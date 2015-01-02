@@ -1,0 +1,1 @@
+java_binary: description of module directory in here

@@ -20,7 +20,9 @@ class x7proto(ShutItModule):
 		shutit.send_host_file('/tmp/build/x7proto/proto-7.7.md5','context/proto-7.7.md5')
 		shutit.send('''grep -v '^#' ../proto-7.7.md5 | awk '{print $2}' | wget -i- -c -B http://xorg.freedesktop.org/releases/individual/proto/''')
 		shutit.send('md5sum -c ../proto-7.7.md5')
+		shutit.login(command='bash -e')
 		shutit.send('''for package in $(grep -v '^#' ../proto-7.7.md5 | awk '{print $2}'); do packagedir=${package%.tar.bz2}; tar -xf $package; pushd $packagedir; ./configure $XORG_CONFIG; make; make install; popd; rm -rf $packagedir; done''')
+		shutit.logout()
 		return True
 
 	#def get_config(self, shutit):
@@ -36,8 +38,9 @@ class x7proto(ShutItModule):
 	#def stop(self, shutit):
 	#	return True
 
-	#def finalize(self, shutit):
-	#	return True
+	def finalize(self, shutit):
+		shutit.send('rm -rf /tmp/build/x7proto')
+		return True
 
 	#def remove(self, shutit):
 	#	return True
@@ -50,6 +53,6 @@ def module():
 		'shutit.tk.sd.x7proto.x7proto', 158844782.00802,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.util_macros.util_macros']
+		depends=['shutit.tk.sd.util_macros.util_macros','shutit.tk.sd.libxslt.libxslt']
 	)
 
