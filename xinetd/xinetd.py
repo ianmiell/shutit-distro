@@ -11,6 +11,8 @@ class xinetd(ShutItModule):
 		return shutit.file_exists('/root/shutit_build/module_record/' + self.module_id + '/built')
 
 	def build(self, shutit):
+		shutit.send('mkdir -p /tmp/build/xinetd')
+		shutit.send('cd /tmp/build/xinetd')
 		shutit.send('wget -qO- ftp://anduin.linuxfromscratch.org/BLFS/svn/x/xinetd-2.3.15.tar.gz | tar -zxf -')
 		shutit.send('cd xinetd*')
 		shutit.send('sed -i -e "s/exec_server/child_process/" xinetd/builtins.c')
