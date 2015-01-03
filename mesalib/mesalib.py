@@ -39,6 +39,6 @@ def module():
 		'shutit.tk.sd.mesalib.mesalib', 158844782.0257,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.libdrm.libdrm','shutit.tk.sd.python2.python2','shutit.tk.sd.llvm.llvm']
+		depends=['shutit.tk.sd.libdrm.libdrm','shutit.tk.sd.python2.python2','shutit.tk.sd.llvm.llvm','shutit.tk.sd.elfutils.elfutils']
 	)
 
