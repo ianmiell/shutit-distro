@@ -23,7 +23,7 @@ class llvm(ShutItModule):
 		shutit.send('mv projects/compiler-rt-3.5.0.src projects/compiler-rt')
 		shutit.send('sed -e "s:/docs/llvm:/share/doc/llvm-' + shutit.cfg[self.module_id]['version'] + ':" -i Makefile.config.in')
 		shutit.send('CC=gcc CXX=g++ ./configure --prefix=/usr --sysconfdir=/etc --enable-libffi --enable-optimized --enable-shared --disable-assertions')
-		shutit.send('make')
+		shutit.send('make',timeout=99999)
 		shutit.send('make install')
 		shutit.send('chmod -v 644 /usr/lib/libclang*.a')
 		shutit.send('chmod -v 644 /usr/lib/libLLVM*.a')
