@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Qt4 Linguist 
+Comment=Add translations to Qt4 applications
+Exec=$QT4LINK/bin/linguist
+Icon=linguist-qt4.png
+MimeType=text/vnd.trolltech.linguist;application/x-linguist;
+Terminal=false
+Encoding=UTF-8
+Type=Application
+Categories=Qt;Development;

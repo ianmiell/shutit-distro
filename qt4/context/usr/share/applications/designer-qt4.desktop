@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Qt4 Designer
+Comment=Design GUIs for Qt4 applications
+Exec=$QT4LINK/bin/designer
+Icon=designer-qt4.png
+MimeType=application/x-designer;
+Terminal=false
+Encoding=UTF-8
+Type=Application
+Categories=Qt;Development;
