@@ -39,11 +39,11 @@ class qt4(ShutItModule):
 		shutit.send('install -v -Dm644 tools/linguist/linguist/images/icons/linguist-128-32.png /usr/share/pixmaps/linguist-qt4.png')
 		shutit.send('install -v -Dm644 tools/qdbus/qdbusviewer/images/qdbusviewer-128.png /usr/share/pixmaps/qdbusviewer-qt4.png')
 		shutit.send('install -dm755 /usr/share/applications')
-		shutit.send('/usr/share/applications/assistant-qt4.desktop')
-		shutit.send('/usr/share/applications/designer-qt4.desktop ')
-		shutit.send('/usr/share/applications/linguist-qt4.desktop')
-		shutit.send('/usr/share/applications/qdbusviewer-qt4.desktop ')
-		shutit.send('/usr/share/applications/qtconfig-qt4.desktop')
+		shutit.send_host_file('/usr/share/applications/assistant-qt4.desktop','context/usr/share/applications/assistant-qt4.desktop')
+		shutit.send_host_file('/usr/share/applications/designer-qt4.desktop','context/usr/share/applications/designer-qt4.desktop')
+		shutit.send_host_file('/usr/share/applications/linguist-qt4.desktop','context/usr/share/applications/linguist-qt4.desktop')
+		shutit.send_host_file('/usr/share/applications/qdbusviewer-qt4.desktop','context/usr/share/applications/qdbusviewer-qt4.desktop')
+		shutit.send_host_file('/usr/share/applications/qtconfig-qt4.desktop','context/usr/share/applications/qtconfig-qt4.desktop')
 		return True
 
 	def get_config(self, shutit):
