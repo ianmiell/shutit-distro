@@ -20,7 +20,7 @@ class qt4(ShutItModule):
 		shutit.send('''sed -i -e "/#if/d" -e "/#error/d" -e "/#endif/d" config.tests/unix/libmng/libmng.cpp''')
 		shutit.send('''sed -i '/CONFIG -/ a\isEmpty(OUTPUT_DIR): OUTPUT_DIR = ../..' src/3rdparty/webkit/Source/WebKit2/DerivedSources.pro''')
 		shutit.send('./configure -prefix /usr -bindir /usr/bin -plugindir /usr/lib/qt4/plugins -importdir /usr/lib/qt4/imports -headerdir /usr/include/qt4 -datadir /usr/share/qt4 -sysconfdir /etc/xdg -docdir /usr/share/doc/qt4 -demosdir /usr/share/doc/qt4/demos -examplesdir /usr/share/doc/qt4/examples -translationdir /usr/share/qt4/translations -confirm-license -opensource -release -dbus-linked -openssl-linked -system-sqlite -no-phonon -no-phonon-backend -no-nis -no-openvg -nomake demos -nomake examples -optimized-qmake')
-		shutit.send('make',timeout=99999)
+		shutit.send('make -j8',timeout=99999)
 		shutit.send(r'''find . -name "*.pc" -exec perl -pi -e "s, -L$PWD/?\S+,,g" {} \;''')
 		shutit.send('make install')
 		shutit.send('rm -rf /usr/tests')
