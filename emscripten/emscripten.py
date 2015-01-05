@@ -15,7 +15,6 @@ class emscripten(ShutItModule):
 		shutit.send('cd /tmp/build/emscripten')
 		shutit.send('wget -qO- https://s3.amazonaws.com/mozilla-games/emscripten/releases/emsdk-portable.tar.gz | tar -zxf -')
 		shutit.send('cd emsdk*')
-		shutit.pause_point('')
 		return True
 
 	def get_config(self, shutit):
