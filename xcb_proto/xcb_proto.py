@@ -39,6 +39,6 @@ def module():
 		'shutit.tk.sd.xcb_proto.xcb_proto', 158844782.008123,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.python2.python2']
+		depends=['shutit.tk.setup']
 	)
 

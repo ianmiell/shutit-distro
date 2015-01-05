@@ -40,6 +40,6 @@ def module():
 		'shutit.tk.sd.git.git', 158844782.01065,
 		description='Git built from source',
 		maintainer='ian.miell@gmail.com',
-		depends=['shutit.tk.sd.python2.python2','shutit.tk.sd.curl.curl','shutit.tk.sd.asciidoc.asciidoc','shutit.tk.sd.xmlto.xmlto','shutit.tk.sd.docbook_utils.docbook_utils','shutit.tk.sd.make_certs.make_certs']
+		depends=['shutit.tk.sd.curl.curl','shutit.tk.sd.asciidoc.asciidoc','shutit.tk.sd.xmlto.xmlto','shutit.tk.sd.docbook_utils.docbook_utils','shutit.tk.sd.make_certs.make_certs']
 	)
 

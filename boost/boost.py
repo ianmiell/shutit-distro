@@ -40,6 +40,6 @@ def module():
 		'shutit.tk.sd.boost.boost', 158844782.0233,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.icu.icu','shutit.tk.sd.python2.python2']
+		depends=['shutit.tk.sd.icu.icu']
 	)
 

@@ -39,6 +39,6 @@ def module():
 		'shutit.tk.sd.alsa_lib.alsa_lib', 158844782.0066,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.python2.python2']
+		depends=['shutit.tk.setup']
 	)
 

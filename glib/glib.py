@@ -39,6 +39,6 @@ def module():
 		'shutit.tk.sd.glib.glib', 158844782.0091,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.python2.python2','shutit.tk.sd.pcre.pcre']
+		depends=['shutit.tk.sd.pcre.pcre']
 	)
 
