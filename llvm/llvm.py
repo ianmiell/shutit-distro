@@ -56,6 +56,6 @@ def module():
 		'shutit.tk.sd.llvm.llvm', 158844782.0043,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.python2.python2']
+		depends=['shutit.tk.setup']
 	)
 

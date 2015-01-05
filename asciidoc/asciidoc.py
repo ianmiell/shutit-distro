@@ -41,6 +41,6 @@ def module():
 		'shutit.tk.sd.asciidoc.asciidoc', 158844782.006,
 		description='',
 		maintainer='ian.miell@gmail.com',
-		depends=['shutit.tk.sd.python2.python2']
+		depends=['shutit.tk.setup']
 	)
 

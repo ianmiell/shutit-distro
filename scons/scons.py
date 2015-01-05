@@ -37,6 +37,6 @@ def module():
 		'shutit.tk.sd.scons.scons', 158844782.0069,
 		description='',
 		maintainer='ian.miell@gmail.com',
-		depends=['shutit.tk.sd.libxslt.libxslt','shutit.tk.sd.python2.python2']
+		depends=['shutit.tk.setup']
 	)
 

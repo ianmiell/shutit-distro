@@ -44,6 +44,6 @@ def module():
 		'shutit.tk.sd.x7proto.x7proto', 158844782.00802,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.util_macros.util_macros','shutit.tk.sd.libxslt.libxslt']
+		depends=['shutit.tk.sd.util_macros.util_macros']
 	)
 

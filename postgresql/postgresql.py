@@ -42,6 +42,6 @@ def module():
 		'shutit.tk.sd.postgresql.postgresql', 158844782.0255,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.python2.python2','shutit.tk.sd.tcl.tcl','shutit.tk.sd.libxslt.libxslt','shutit.tk.sd.open_ldap.open_ldap','shutit.tk.sd.linux_pam.linux_pam','shutit.tk.sd.mit_kerberos_v5.mit_kerberos_v5']
+		depends=['shutit.tk.sd.tcl.tcl','shutit.tk.sd.open_ldap.open_ldap','shutit.tk.sd.linux_pam.linux_pam','shutit.tk.sd.mit_kerberos_v5.mit_kerberos_v5']
 	)
 

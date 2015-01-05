@@ -37,6 +37,6 @@ def module():
 		'shutit.tk.sd.sthttpd.sthttpd', 158844782.0236,
 		description='Small lightweight web server',
 		maintainer='ian.miell@gmail.com',
-		depends=['shutit.tk.sd.git.git','shutit.tk.sd.libxslt.libxslt']
+		depends=['shutit.tk.sd.git.git']
 	)
 
