@@ -8,7 +8,7 @@ class sthttpd(ShutItModule):
 		return shutit.file_exists('/root/shutit_build/module_record/' + self.module_id + '/built')
 
 	def build(self, shutit):
-		shutit.send('groupadd thttpd')
+		shutit.send('groupadd -g 1001 thttpd')
 		shutit.send('mkdir -p /tmp/build/sthttpd')
 		shutit.send('cd /tmp/build/sthttpd')
 		shutit.send('git clone git://opensource.dyc.edu/sthttpd sthttpd')

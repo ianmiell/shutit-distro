@@ -17,8 +17,8 @@ class boost(ShutItModule):
 		shutit.send('cd boost*')
 		shutit.send('''sed -e '1 i#ifndef Q_MOC_RUN' -e '$ a#endif' -i boost/type_traits/detail/has_binary_operator.hpp''')
 		shutit.send('./bootstrap.sh --prefix=/usr')
-		shutit.send('./b2 stage threading=multi link=shared')
-		shutit.send('./b2 install threading=multi link=shared')
+		shutit.send('./b2 stage threading=multi') #--link=shared omitted as required by eg thrift
+		shutit.send('./b2 install threading=multi') #--link=shared omitted as required by eg thrift
 		return True
 
 	#def get_config(self, shutit):

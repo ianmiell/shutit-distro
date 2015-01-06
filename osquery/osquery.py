@@ -12,25 +12,17 @@ class osquery(ShutItModule):
 
 
 	def build(self, shutit):
-#DONE? shutit.install('libgoogle-glog-dev')
-#DONE? shutit.install('librpm-dev')
-#DONE? shutit.install('libsnappy-dev')
-#DONE? shutit.install('libprocps3-dev')
-#DONE? shutit.install('libunwind8-dev')
-#DONE? shutit.install('libblkid-dev')
-#DONE? shutit.install('libudev-dev')
-#DONE? shutit.install('uuid-dev')
-#DONE? shutit.install('libssl-dev')
-#DONE? shutit.install('libbz2-dev')
+		shutit.send('mkdir -p /tmp/build/osquery')
+		shutit.send('cd /tmp/build/osquery')
 		shutit.send('pip install jinja2')
-		shutit.send('export CPATH=/usr/lib/x86_64-linux-gnu:/opt/rocksdb/include')
-		shutit.send('export LIBRARY_PATH=/usr/local/lib')
-		shutit.send('cd /opt')
+		#shutit.send('export CPATH=/usr/lib/x86_64-linux-gnu:/opt/rocksdb/include')
+		#shutit.send('export LIBRARY_PATH=/usr/local/lib')
 		shutit.send('git clone https://github.com/facebook/osquery.git')
 		shutit.send('cd /opt/osquery')
 		shutit.send('git submodule init')
 		shutit.send('git submodule update')
 		shutit.send('make')
+		# make install?
 		return True
 
 	#def get_config(self, shutit):
@@ -55,9 +47,9 @@ class osquery(ShutItModule):
 
 def module():
 	return osquery(
-		'shutit.tk.sd.osquery.osquery', 158844782.028,
+		'shutit.tk.sd.osquery.osquery', 158844782.029,
 		description='Facebook\'s OSQuery sql tool',
 		maintainer='ian.miell@gmail.com',
-		depends=['shutit.tk.sd.git.git','shutit.tk.sd.qt4.qt4','shutit.tk.sd.sqlite.sqlite','shutit.tk.sd.python_pip.python_pip','shutit.tk.sd.libevent.libevent','shutit.tk.sd.boost.boost','shutit.tk.sd.libgoogle_glog.libgoogle_glog','shutit.tk.sd.rpm.rpm','shutit.tk.sd.libsnappy.libsnappy','shutit.tk.sd.cmake.cmake','shutit.tk.sd.doxygen.doxygen','shutit.tk.sd.rocksdb.rocksdb']
+		depends=['shutit.tk.sd.git.git','shutit.tk.sd.qt4.qt4','shutit.tk.sd.sqlite.sqlite','shutit.tk.sd.python_pip.python_pip','shutit.tk.sd.libevent.libevent','shutit.tk.sd.boost.boost','shutit.tk.sd.libgoogle_glog.libgoogle_glog','shutit.tk.sd.rpm.rpm','shutit.tk.sd.libsnappy.libsnappy','shutit.tk.sd.cmake.cmake','shutit.tk.sd.doxygen.doxygen','shutit.tk.sd.rocksdb.rocksdb','shutit.tk.sd.thrift.thrift','shutit.tk.sd.dpkg.dpkg']
 	)
 
