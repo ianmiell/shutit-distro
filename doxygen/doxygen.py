@@ -38,7 +38,7 @@ def module():
 		'shutit.tk.sd.doxygen.doxygen', 158844782.0277,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.setup']
-#Optional deps: Graphviz-2.38.0, ghostscript-9.15, LLVM-3.5.0 (with clang), Python-2.7.9 or Python-3.4.2, Qt-4.8.6 (for doxywizard), texlive-20140525, and xapian-1.2.19 (for doxyindexer) 
+		depends=['shutit.tk.sd.llvm.llvm','shutit.tk.sd.qt4.qt4']
+#Optional deps: Graphviz-2.38.0, ghostscript-9.15, texlive-20140525, and xapian-1.2.19 (for doxyindexer) 
 	)
 

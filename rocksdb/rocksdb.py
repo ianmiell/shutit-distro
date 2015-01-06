@@ -45,7 +45,7 @@ class rocksdb(ShutItModule):
 
 def module():
 	return rocksdb(
-		'shutit.tk.rocksdb.rocksdb', 158844782.0265,
+		'shutit.tk.sd.rocksdb.rocksdb', 158844782.0265,
 		description='Facebook\'s rocksdb',
 		maintainer='ian.miell@gmail.com',
 		depends=['shutit.tk.sd.git.git','shutit.tk.sd.gflags.gflags']
