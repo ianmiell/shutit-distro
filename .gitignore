@@ -55,3 +55,5 @@ target/
 
 # Base
 */lfs.tar.xz
+
+nohup.out
