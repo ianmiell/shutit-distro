@@ -13,7 +13,7 @@ class node(ShutItModule):
 	def build(self, shutit):
 		shutit.send('mkdir -p /tmp/build/node')
 		shutit.send('cd /tmp/build/node')
-		shutit.send('wget -qO- http://node.org/dist/v0.10.35/node-v0.10.35.tar.gz | tar -zxf -')
+		shutit.send('wget -qO- http://nodejs.org/dist/v0.10.35/node-v0.10.35.tar.gz | tar -zxf -')
 		shutit.send('cd node*')
 		shutit.send('./configure --prefix=/usr')
 		shutit.send('make')
