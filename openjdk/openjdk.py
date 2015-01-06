@@ -39,6 +39,7 @@ class openjdk(ShutItModule):
 		shutit.send_host_file('/etc/profile.d/extrapaths.sh','context/etc/profile.d/extrapaths.sh')
 		shutit.send('mkdir -p /var/cache/man')
 		shutit.send('mandb -c /opt/jdk/man')
+		shutit.send('mkdir -p /opt/jdk/bin')
 		shutit.send_host_file('/opt/jdk/bin/mkcacerts','context/opt/jdk/bin/mkcacerts')
 		shutit.send('chmod -c 0755 /opt/jdk/bin/mkcacerts')
 		shutit.send('/opt/jdk/bin/mkcacerts -d "/etc/ssl/certs/" -k "/opt/jdk/bin/keytool" -s "/usr/bin/openssl" -o "/opt/jdk/jre/lib/security/cacerts"')
