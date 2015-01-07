@@ -15,7 +15,9 @@ class pcre(ShutItModule):
 		shutit.send('cd /tmp/build/pcre')
 		shutit.send('wget -qO- ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.36.tar.bz2 | bunzip2 -c | tar -xf -')
 		shutit.send('cd pcre*')
-		shutit.send('./configure --prefix=/usr --docdir=/usr/share/doc/pcre-8.36 --enable-unicode-properties --enable-pcre16 --enable-pcre32 --enable-pcregrep-libz --enable-pcregrep-libbz2 --enable-pcretest-libreadline --disable-static')
+		#shutit.send('./configure --prefix=/usr --docdir=/usr/share/doc/pcre-8.36 --enable-unicode-properties --enable-pcre16 --enable-pcre32 --enable-pcregrep-libz --enable-pcregrep-libbz2 --enable-pcretest-libreadline --disable-static') # TODO: reinstate the enables
+		shutit.send('./configure --prefix=/usr --docdir=/usr/share/doc/pcre-8.36 --enable-unicode-properties --enable-pcre16 --enable-pcre32 --disable-static')
+
 		shutit.send('make')
 		shutit.send('make install')
 		shutit.send('mv -v /usr/lib/libpcre.so.* /lib')

@@ -26,6 +26,7 @@ class openjdk(ShutItModule):
 		shutit.send(r'''sed 's/\([ \t]\)\]\([^\]\)/\1I]\2/g' -i hotspot/make/linux/makefiles/adjust-mflags.sh''')
 		shutit.send('unset JAVA_HOME')
 		shutit.send('sh ./configure --with-update-version=25 --with-build-number=b18 --with-milestone=BLFS --enable-unlimited-crypto --with-zlib=system --with-giflib=system')
+		shutit.send('mkdir -p /usr/share/java') # required to get make to work
 		shutit.send('make DEBUG_BINARIES=true all')
 		shutit.send(r'find build/*/images/j2sdk-image -iname \*.jar -exec chmod a+r {} \;')
 		shutit.send('chmod a+r build/*/images/j2sdk-image/lib/ct.sym')
@@ -68,6 +69,6 @@ def module():
 		'shutit.tk.sd.openjdk.openjdk', 158844782.0241,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.java_binary.java_binary','shutit.tk.sd.alsa_lib.alsa_lib','shutit.tk.sd.cpio.cpio','shutit.tk.sd.cups.cups','shutit.tk.sd.which.which','shutit.tk.sd.xorg_libs.xorg_libs','shutit.tk.sd.zip.zip','shutit.tk.sd.giflib.giflib']
+		depends=['shutit.tk.sd.junit.junit','shutit.tk.sd.alsa_lib.alsa_lib','shutit.tk.sd.cpio.cpio','shutit.tk.sd.cups.cups','shutit.tk.sd.which.which','shutit.tk.sd.xorg_libs.xorg_libs','shutit.tk.sd.zip.zip','shutit.tk.sd.giflib.giflib']
 	)
 

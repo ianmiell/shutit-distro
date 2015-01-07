@@ -1,7 +1,0 @@
-#! /bin/sh
-
-set -e
-
-if [ -x rsa-keygen ] ; then
-  ./rsa-keygen -r rsa-decrypt -o testkey || exit 1
-fi
