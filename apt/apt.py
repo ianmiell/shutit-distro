@@ -18,6 +18,8 @@ class apt(ShutItModule):
 		shutit.send('git clone git://anonscm.debian.org/apt/apt.git')
 		shutit.send('cd apt')
 		shutit.pause_point('')
+		shutit.send('cp /usr/share/automake-1.14/config.guess buildlib/')
+		shutit.send('cp /usr/share/automake-1.14/config.sub buildlib/')
 		shutit.send('autoreconf -f -i')
 		shutit.send('./configure --prefix=/usr')
 		shutit.send('make')
@@ -50,6 +52,6 @@ def module():
 		'shutit.tk.sd.apt.apt', 158844782.02825,
 		description='',
 		maintainer='ian.miell@gmail.com',
-		depends=['shutit.tk.sd.curl.curl','shutit.tk.sd.xmlto.xmlto','shutit.tk.sd.berkeleydb.berkeleydb']
+		depends=['shutit.tk.sd.curl.curl','shutit.tk.sd.xmlto.xmlto','shutit.tk.sd.berkeleydb.berkeleydb','shutit.tk.sd.git.git','shutit.tk.sd.gtest.gtest']
 	)
 
