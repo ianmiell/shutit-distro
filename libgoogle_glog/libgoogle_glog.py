@@ -15,7 +15,7 @@ class libgoogle_glog(ShutItModule):
 		shutit.send('cd /tmp/build/libgoogle_glog')
 		shutit.send('wget -qO- https://google-glog.googlecode.com/files/glog-0.3.3.tar.gz | tar -zxf -')
 		shutit.send('cd glog*')
-		shutit.send('./configure --prefix=/usr')
+		shutit.send('./configure --prefix=/usr --disable-static')
 		shutit.send('make')
 		shutit.send('make install')
 		return True
@@ -35,7 +35,7 @@ class libgoogle_glog(ShutItModule):
 
 def module():
 	return libgoogle_glog(
-		'shutit.tk.sd.libgoogle_glog.libgoogle_glog', 158844782.0269,
+		'shutit.tk.sd.libgoogle_glog.libgoogle_glog', 158844782.00269,
 		description='',
 		maintainer='',
 		depends=['shutit.tk.sd.make_certs.make_certs']
