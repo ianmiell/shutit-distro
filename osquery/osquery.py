@@ -18,7 +18,7 @@ class osquery(ShutItModule):
 		#shutit.send('export CPATH=/usr/lib/x86_64-linux-gnu:/opt/rocksdb/include')
 		#shutit.send('export LIBRARY_PATH=/usr/local/lib')
 		shutit.send('git clone https://github.com/facebook/osquery.git')
-		shutit.send('cd /tmp/build/osquery')
+		shutit.send('cd osquery')
 		shutit.send('git submodule init')
 		shutit.send('git submodule update')
 		shutit.send('make')

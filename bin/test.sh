@@ -27,6 +27,7 @@ do
 	if [[ -a ../STOPTEST ]]
 	then
 		echo "STOPTEST found in $d"
+		popd
 		continue
 	fi
 	echo "BEGIN $d $(date)"
