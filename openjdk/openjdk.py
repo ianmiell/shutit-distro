@@ -11,6 +11,7 @@ class openjdk(ShutItModule):
 		return shutit.file_exists('/root/shutit_build/module_record/' + self.module_id + '/built')
 
 	def build(self, shutit):
+		shutit.send('mkdir -p /usr/share/java')
 		shutit.send('mkdir -p /tmp/build/openjdk')
 		shutit.send('cd /tmp/build/openjdk')
 		shutit.send('wget -qO- http://hg.openjdk.java.net/jdk8u/jdk8u/archive/jdk8u25-b18.tar.bz2 | bunzip2 -c | tar -xf -')
