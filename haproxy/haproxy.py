@@ -15,7 +15,6 @@ class haproxy(ShutItModule):
 		shutit.send('cd /tmp/build/haproxy')
 		shutit.send('wget -qO- http://www.haproxy.org/download/1.5/src/haproxy-1.5.10.tar.gz | tar -zxf -')
 		shutit.send('cd haproxy*')
-		shutit.pause_point('')
 		shutit.send('make TARGET=linux2628 USE_PCRE=1 USE_OPENSSL=1 ADDLIB=-lz DEBUG=-s USE_FUTEX=1')
 		shutit.send('make install')
 		return True

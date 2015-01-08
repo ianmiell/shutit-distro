@@ -13,11 +13,14 @@ class gtest(ShutItModule):
 
 	def build(self, shutit):
 		shutit.send('mkdir -p /tmp/build/gtest')
+
 		shutit.send('cd /tmp/build/gtest')
 		shutit.send('wget http://googletest.googlecode.com/files/gtest-1.7.0.zip')
 		shutit.send('unzip gtest-1.7.0.zip')
 		shutit.send('rm gtest-1.7.0.zip')
 		shutit.send('cd gtest-1.7.0')
+		shutit.send('cp -r . /usr/src/gtest  # moving here and leaving this here makes life easier')
+		shutit.send('cd /usr/src/gtest')
 		shutit.send('./configure')
 		shutit.send('make')
 		shutit.send('cp -a include/gtest /usr/include')

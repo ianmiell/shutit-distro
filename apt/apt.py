@@ -20,10 +20,17 @@ class apt(ShutItModule):
 		shutit.pause_point('')
 		shutit.send('cp /usr/share/automake-1.14/config.guess buildlib/')
 		shutit.send('cp /usr/share/automake-1.14/config.sub buildlib/')
-		shutit.send('autoreconf -f -i')
+		#shutit.send('autoreconf -f -i') # don't think this is needed
+#checking for lzma.h... yes
+#checking debian architecture... ./configure: line 4975: dpkg-architecture: command not found
+#configure: error: failed: use --host= or output from dpkg-architecture
+
+# hard-code line 4975 to amd64(?)
+#archset="x86_64-linux-gnu"
 		shutit.send('./configure --prefix=/usr')
 		shutit.send('make')
-		shutit.send('make install')
+# copy the bin objects to lib
+		#shutit.send('make install')
 		return True
 
 	#def get_config(self, shutit):
