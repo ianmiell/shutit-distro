@@ -19,15 +19,31 @@ class apt(ShutItModule):
 		shutit.send('cd apt')
 		shutit.send('cp /usr/share/automake-1.14/config.guess buildlib/')
 		shutit.send('cp /usr/share/automake-1.14/config.sub buildlib/')
-		shutit.send('autoreconf -f -i') # don't think this is needed
+		shutit.send('autoreconf -f -i',check_exit=False)
 #checking debian architecture... ./configure: line 4975: dpkg-architecture: command not found
 #configure: error: failed: use --host= or output from dpkg-architecture
 # hard-code line 4975 to amd64(?)
 #archset="x86_64-linux-gnu"
 		shutit.send('''sed -i 's/^archset=.*/archset="x86_64-linux-gnu"/' configure''')
 		shutit.send('./configure --prefix=/usr')
-		shutit.send('make')
+		shutit.send('make',check_exit=False)
+		shutit.send('make') # god knows why
+		shutit.send('mkdir -p /etc/apt/sources.list.d/')
+		shutit.send('mkdir -p /etc/apt/preferences.d/')
+		shutit.send('mkdir -p /usr/lib/apt/')
+		shutit.send('cd bin')
+		shutit.send('cp lib* /usr/lib')
+		shutit.send('cp apt* /usr/bin')
+		shutit.send('cp -r methods /usr/lib/apt')
 		shutit.pause_point('')
+#-rw-r--r-- 1 root root  5279530 Jan  8 08:27 gtest.a #ignore?
+#-rwxr-xr-x 1 root root 22667640 Jan  8 08:27 gtest_libapt_tes #ignore?
+#-rwxr-xr-x 1 root root     9528 Jan  8 08:27 mthdcat  #?
+#-rwxr-xr-x 1 root root    79456 Jan  8 08:27 testdeb #ignore?
+#-rwxr-xr-x 1 root root    93784 Jan  8 08:27 test_udevcdrom #ignore?
+#-rwxr-xr-x 1 root root    78272 Jan  8 08:27 extract-control #?
+#-rwxr-xr-x 1 root root   578488 Jan  8 08:27 aptwebserver #?
+
 # copy the bin objects to lib
 #imiell@lp01728:/space/git/dockerbook$ apt-file show apt | grep ^apt:
 #apt: /etc/apt/apt.conf.d/01autoremove
@@ -62,7 +78,6 @@ class apt(ShutItModule):
 #apt: /usr/lib/dpkg/methods/apt/update
 #apt: /usr/share/apt/ubuntu-archive.gpg
 #apt: /usr/share/bug/apt/script
-
 		#shutit.send('make install')
 		return True
 

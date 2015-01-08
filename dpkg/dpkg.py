@@ -20,6 +20,8 @@ class dpkg(ShutItModule):
 		shutit.send('./configure --prefix=/usr')
 		shutit.send('make')
 		shutit.send('make install')
+		shutit.send('mkdir -p /var/lib/dpkg')
+		shutit.send('touch /var/lib/dpkg/status')
 		return True
 
 	#def get_config(self, shutit):
