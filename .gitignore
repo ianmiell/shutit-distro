@@ -54,6 +54,6 @@ docs/_build/
 target/
 
 # Base
-*/lfs.tar.xz
+*/lfs*.tar.xz
 
 nohup.out

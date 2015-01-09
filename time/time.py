@@ -18,7 +18,7 @@ class time(ShutItModule):
 		shutit.send('''sed -i 's/$(ACLOCAL)//' Makefile.in''')
 		shutit.send('''sed -i 's/lu", ptok ((UL) resp->ru.ru_maxrss)/ld", resp->ru.ru_maxrss/' time.c''')
 		shutit.send('./configure --prefix=/usr --infodir=/usr/share/info')
-		shutit.send('mak')
+		shutit.send('make')
 		shutit.send('make install')
 		return True
 
