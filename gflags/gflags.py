@@ -13,12 +13,13 @@ class gflags(ShutItModule):
 	def build(self, shutit):
 		shutit.send('mkdir -p /tmp/build/gflags')
 		shutit.send('cd /tmp/build/gflags')
-		shutit.send('wget -qO- https://github.com/schuhschuh/gflags/archive/v2.1.1.tar.gz | tar -zxf -')
+		shutit.send('wget -qO- https://gflags.googlecode.com/files/gflags-2.0.tar.gz | tar -zxf -')
 		shutit.send('cd gflags*')
 		shutit.send('mkdir build')
 		shutit.send('cd build')
-		shutit.send('cmake ..')
-		shutit.send(r'''sed -i 's/\/usr\/local/\/usr/g' cmake_install.cmake''')
+		shutit.send('./configure --prefix=/usr')
+		#shutit.send('cmake ..')
+		#shutit.send(r'''sed -i 's/\/usr\/local/\/usr/g' cmake_install.cmake''')
 		shutit.send('make')
 		shutit.send('make install')
 		return True
