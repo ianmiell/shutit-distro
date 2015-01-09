@@ -14,7 +14,7 @@ class dpkg(ShutItModule):
 	def build(self, shutit):
 		shutit.send('mkdir -p /tmp/build/dpkg')
 		shutit.send('cd /tmp/build/dpkg')
-		shutit.send('git clone -b 1.17.23 git://anonscm.debian.org/dpkg/dpkg.git')
+		shutit.send('git clone -b 1.17.4 git://anonscm.debian.org/dpkg/dpkg.git')
 		shutit.send('cd dpkg')
 		shutit.send('autoreconf -f -i')
 		shutit.send('./configure --prefix=/usr')

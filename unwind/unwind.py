@@ -4,17 +4,19 @@
 from shutit_module import ShutItModule
 
 
-class gflags(ShutItModule):
+class unwind(ShutItModule):
 
 
 	def is_installed(self, shutit):
 		return shutit.file_exists('/root/shutit_build/module_record/' + self.module_id + '/built')
 
 	def build(self, shutit):
-		shutit.send('mkdir -p /tmp/build/gflags')
-		shutit.send('cd /tmp/build/gflags')
-		shutit.send('wget -qO- https://gflags.googlecode.com/files/gflags-2.0.tar.gz | tar -zxf -')
-		shutit.send('cd gflags*')
+		shutit.send('mkdir -p /tmp/build/unwind')
+		shutit.send('cd /tmp/build/unwind')
+		shutit.get_url('libunwind-1.1.tar.gz',['http://download.savannah.gnu.org/releases/libunwind'])
+		shutit.send('tar -zxf libunwind-1.1.tar.gz')
+		shutit.send('rm -f libunwind-1.1.tar.gz')
+		shutit.send('cd libunwind-*')
 		shutit.send('./configure --prefix=/usr')
 		#shutit.send('cmake ..')
 		#shutit.send(r'''sed -i 's/\/usr\/local/\/usr/g' cmake_install.cmake''')
@@ -26,7 +28,7 @@ class gflags(ShutItModule):
 		return True
 
 	def finalize(self, shutit):
-		shutit.send('rm -rf /tmp/build/gflags')
+		shutit.send('rm -rf /tmp/build/unwind')
 		return True
 
 	#def remove(self, shutit):
@@ -36,10 +38,10 @@ class gflags(ShutItModule):
 	#	return True
 
 def module():
-	return gflags(
-		'shutit.tk.sd.gflags.gflags', 158844782.0264,
+	return unwind(
+		'shutit.tk.sd.unwind.unwind', 158844782.029015,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.make_certs.make_certs','shutit.tk.sd.cmake.cmake']
+		depends=['shutit.tk.setup']
 	)
 
