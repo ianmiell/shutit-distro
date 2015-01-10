@@ -20,6 +20,7 @@ class fastcomp(ShutItModule):
 		shutit.send('cd build')
 		shutit.send('../configure --enable-optimized --disable-assertions --enable-targets=host,js --prefix=/usr')
 		shutit.send('make')
+		shutit.send('make install')
 		shutit.send('''echo "LLVM_ROOT='/usr/bin/emscripten-fastcomp/build/bin'" > ~/.emscripten''')
 		return True
 

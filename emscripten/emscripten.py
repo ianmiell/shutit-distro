@@ -16,6 +16,8 @@ class emscripten(ShutItModule):
 		shutit.send('wget -qO- https://s3.amazonaws.com/mozilla-games/emscripten/releases/emsdk-portable.tar.gz | tar -zxf -')
 		shutit.send('cd emsdk*')
 		shutit.pause_point('emscripten build')
+		shutit.send('git clone https://github.com/kripken/emscripten.git')
+		shutit.send('cd emscripten')
 		# http://kripken.github.io/emscripten-site/docs/getting_started/downloads.html#sdk-download-and-install
 		# then: http://kripken.github.io/emscripten-site/docs/building_from_source/building_emscripten_from_source_on_linux.html
 		return True
