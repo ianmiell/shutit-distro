@@ -46,7 +46,6 @@ class apt(ShutItModule):
 		shutit.send('cp -r apt-pkg /usr/include')
 		#-rwxr-xr-x 1 root root     9528 Jan  8 08:27 mthdcat  #?
 		#-rwxr-xr-x 1 root root    78272 Jan  8 08:27 extract-control #?
-		shutit.pause_point('')
 		# These files might be useful, but aren't required
 		#apt: /etc/apt/apt.conf.d/01autoremove
 		#apt: /etc/apt/apt.conf.d/20changelog
