@@ -16,8 +16,8 @@ class apt(ShutItModule):
 		shutit.send('cd /tmp/build/apt')
 		shutit.send('git clone git://anonscm.debian.org/apt/apt.git')
 		shutit.send('cd apt')
-		shutit.send('cp /usr/share/automake-1.14/config.guess buildlib/')
-		shutit.send('cp /usr/share/automake-1.14/config.sub buildlib/')
+		shutit.send('cp /usr/share/automake-1.15/config.guess buildlib/')
+		shutit.send('cp /usr/share/automake-1.15/config.sub buildlib/')
 		shutit.send('autoreconf -f -i',check_exit=False) # fails, not sure why
 		shutit.send('''sed -i 's/^archset=.*/archset="x86_64-linux-gnu"/' configure # hard-code build to x86_64''')
 		shutit.send('./configure --prefix=/usr')
