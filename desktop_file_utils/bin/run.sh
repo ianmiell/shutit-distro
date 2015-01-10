@@ -1,3 +1,3 @@
 #!/bin/bash
 # Example for running
-docker run -t -i desktop_file_utils  /bin/bash
+docker run -e HOME=/root -t -i imiell/sd_desktop_file_utils  /bin/bash

@@ -15,7 +15,7 @@ class vnext(ShutItModule):
 		shutit.send('mkdir -p /tmp/build/vnext')
 		shutit.send('cd /tmp/build/vnext')
 		shutit.send('curl -s https://raw.githubusercontent.com/aspnet/Home/master/kvminstall.sh | sh')
-		shutit.add_to_bashrc('source /root/.kre/kvm/kvm.sh')
+		shutit.add_to_bashrc('export PATH=$PATH:/root/.kre/packages/default/bin')
 		shutit.send('source /root/.kre/kvm/kvm.sh')
 		shutit.send('kvm upgrade')
 		shutit.send('kvm alias default | xargs -i ln -s /root/.kre/packages/{} /root/.kre/packages/default')

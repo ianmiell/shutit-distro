@@ -1,3 +1,3 @@
 #!/bin/bash
 # Example for running
-docker run -t -i java_binary  /bin/bash
+docker run -e HOME=/root -t -i imiell/sd_java_binary  /bin/bash

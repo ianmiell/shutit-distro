@@ -1,3 +1,3 @@
 #!/bin/bash
 # Example for running
-docker run -t -i openjdk  /bin/bash
+docker run -e HOME=/root -t -i imiell/sd_openjdk  /bin/bash

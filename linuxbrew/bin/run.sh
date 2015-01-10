@@ -1,3 +1,3 @@
 #!/bin/bash
 # Example for running
-docker run -t -i linuxbrew  /bin/bash
+docker run -e HOME=/root -t -i imiell/sd_linuxbrew  /bin/bash

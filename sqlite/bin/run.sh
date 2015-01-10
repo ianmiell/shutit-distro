@@ -1,3 +1,3 @@
 #!/bin/bash
 # Example for running
-docker run -t -i sqlite  /bin/bash
+docker run -e HOME=/root -t -i imiell/sd_sqlite  /bin/bash
