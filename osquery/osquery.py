@@ -15,8 +15,6 @@ class osquery(ShutItModule):
 		shutit.send('mkdir -p /tmp/build/osquery')
 		shutit.send('cd /tmp/build/osquery')
 		shutit.send('pip install jinja2')
-		#shutit.send('export CPATH=/usr/lib/x86_64-linux-gnu:/opt/rocksdb/include')
-		#shutit.send('export LIBRARY_PATH=/usr/local/lib')
 		shutit.send('git clone https://github.com/facebook/osquery.git')
 		shutit.send('cd osquery')
 		shutit.send('git submodule init')
@@ -25,12 +23,10 @@ class osquery(ShutItModule):
 		shutit.send('make install')
 		return True
 
-	#def get_config(self, shutit):
-	#	return True
+	def get_config(self, shutit):
+		#shutit.get_config(self.module_id,'minimize',boolean=True,default=True) #TODO
+		return True
 
-	#def check_ready(self, shutit):
-	#	return True
-	
 	#def start(self, shutit):
 	#	return True
 
