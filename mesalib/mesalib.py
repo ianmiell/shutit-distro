@@ -12,6 +12,8 @@ class mesalib(ShutItModule):
 	def build(self, shutit):
 		import sd_util
 		sd_util.setup_x_environment(shutit) # required?
+		shutit.send('mkdir -p /tmp/build/mesalib')
+		shutit.send('cd /tmp/build/mesalib')
 		shutit.send('wget -qO- ftp://ftp.freedesktop.org/pub/mesa/10.3.5/MesaLib-10.3.5.tar.bz2 | bunzip2 -c | tar -xf -')
 		shutit.send('cd Mesa*')
 		shutit.send('wget -qO- http://www.linuxfromscratch.org/patches/blfs/svn/MesaLib-10.3.5-add_xdemos-1.patch | patch -Np1 -i -')
