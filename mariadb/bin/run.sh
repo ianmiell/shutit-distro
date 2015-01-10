@@ -1,3 +1,3 @@
 #!/bin/bash
 # Example for running
-docker run -e HOME=/root -t -i imiell/sd_osquery /bin/bash
+docker run -e HOME=/root -t -i imiell/sd_mariadb /bin/bash

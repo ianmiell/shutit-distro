@@ -1,3 +1,3 @@
 #!/bin/bash
 # Example for running
-docker run -e HOME=/root -t -i imiell/sd_xorg_libs /bin/bash
+docker run -e HOME=/root -t -i imiell/sd_xdotool /bin/bash

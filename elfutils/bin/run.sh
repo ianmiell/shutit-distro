@@ -1,3 +1,3 @@
 #!/bin/bash
 # Example for running
-docker run -e HOME=/root -t -i imiell/sd_tcl /bin/bash
+docker run -e HOME=/root -t -i imiell/sd_elfutils /bin/bash
