@@ -1,2 +1,2 @@
 # Example for running
-docker run -e HOME=/root -t -i imiell/sd_go  /bin/bash
+docker run -e HOME=/root -t -i imiell/sd_go /bin/bash
