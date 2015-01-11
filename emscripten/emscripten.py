@@ -21,6 +21,7 @@ class emscripten(ShutItModule):
 		shutit.send('./emsdk install latest')
 		shutit.send('./emsdk activate latest')
 		shutit.send('source ./emsdk_env.sh')
+		shutit.add_to_bashrc('source /opt/emsdk*/emsdk_env.sh')
 		return True
 
 	def get_config(self, shutit):
