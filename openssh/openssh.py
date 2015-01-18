@@ -8,7 +8,7 @@ class openssh(ShutItModule):
 
 
 	def is_installed(self, shutit):
-		return False
+		return shutit.file_exists('/root/shutit_build/module_record/' + self.module_id + '/built')
 
 
 	def build(self, shutit):
