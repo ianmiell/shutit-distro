@@ -39,7 +39,7 @@ class google_compute(ShutItModule):
 
 def module():
 	return google_compute(
-		'shutit.tk.sd.google_compute.google_compute', 158844782.0302,
+		'shutit.tk.sd.google_compute.google_compute', 158844782.0303,
 		description='Google compute engine resources',
 		maintainer='ian.miell@gmail.com',
 		depends=['shutit.tk.sd.make_certs.make_certs','shutit.tk.sd.curl.curl','shutit.tk.sd.which.which']
