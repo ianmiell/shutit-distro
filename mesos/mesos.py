@@ -50,6 +50,6 @@ def module():
 		'shutit.tk.sd.mesos.mesos', 158844782.0305,
 		description='Apache mesos',
 		maintainer='ian.miell@gmail.com',
-		depends=['shutit.tk.sd.make_certs.make_certs','shutit.tk.sd.curl.curl','shutit.tk.sd.maven.maven','shutit.tk.sd.python_pip.python_pip','shutit.tk.sd.subversion.subversion','shutit.tk.sd.cyrus_sasl.cyrus_sasl','shutit.tk.sd.apache_portable_runtime.apache_portable_runtime']
+		depends=['shutit.tk.sd.make_certs.make_certs','shutit.tk.sd.curl.curl','shutit.tk.sd.maven.maven','shutit.tk.sd.python_pip.python_pip','shutit.tk.sd.subversion.subversion','shutit.tk.sd.cyrus_sasl.cyrus_sasl','shutit.tk.sd.apache_portable_runtime.apache_portable_runtime','shutit.tk.sd.boost.boost']
 	)
 
