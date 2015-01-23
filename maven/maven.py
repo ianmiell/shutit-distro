@@ -17,6 +17,8 @@ class maven(ShutItModule):
 		shutit.send('wget -qO- http://mirror.ox.ac.uk/sites/rsync.apache.org/maven/maven-3/3.2.5/source/apache-maven-3.2.5-src.tar.gz | tar -zxf -')
 		shutit.send('cd apache-maven*')
 		shutit.send('export M2_HOME="/opt/maven"')
+		shutit.add_to_bashrc('export M2_HOME="/opt/maven"')
+		shutit.add_to_bashrc('export PATH="${PATH}:/opt/maven/bin')
 		shutit.send('ant')
 		return True
 

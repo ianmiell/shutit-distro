@@ -12,11 +12,17 @@ class mesos(ShutItModule):
 
 
 	def build(self, shutit):
-		shutit.send('mkdir -p /opt/mesos')
-		shutit.send('cd /opt/mesos')
+		shutit.send('mkdir -p /tmp/build/mesos')
+		shutit.send('cd /tmp/build/mesos')
 		shutit.send('pip install boto')
-## Install Maven (***Only required for Mesos 0.18.1 or newer***).
-#$ sudo apt-get install maven
+		shutit.send('wget -qO- http://www.apache.org/dist/mesos/0.20.1/mesos-0.20.1.tar.gz | tar -zxf -')
+		shutit.send('cd mesos*')
+		shutit.send('mkdir build')
+		shutit.send('cd build')
+		shutit.send('../configure')
+		shutit.send('make')
+		shutit.send('make check # builds the example frameworks also')
+		shutit.send('make install')
 		return True
 
 	def get_config(self, shutit):
