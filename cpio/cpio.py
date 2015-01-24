@@ -13,7 +13,7 @@ class cpio(ShutItModule):
 	def build(self, shutit):
 		shutit.send('mkdir -p /tmp/build/cpio')
 		shutit.send('cd /tmp/build/cpio')
-		shutit.get_url('cpio-2.11.tar.bz2',['http://ftp.gnu.org/pub/gnu/cpioasd','ftp://ftp.osuosl.org/.2/gentoo/distfiles'])
+		shutit.get_url('cpio-2.11.tar.bz2',['http://ftp.gnu.org/pub/gnu/cpio','ftp://ftp.osuosl.org/.2/gentoo/distfiles'])
 		shutit.send('bunzip2 -c cpio-2.11.tar.bz2 | tar -xf -')
 		shutit.send('rm cpio-2.11.tar.bz2')
 		shutit.send('cd cpio*')

@@ -15,6 +15,9 @@ class google_compute(ShutItModule):
 		shutit.send('mkdir -p /opt/google_compute')
 		shutit.send('cd /opt/google_compute')
 		shutit.multisend('wget -qO- https://sdk.cloud.google.com | bash',{'Directory to extract under':'/opt','Do you want to help improve the Google Cloud SDK':'n','Enter path to an rc file to update, or leave blank to use':'','Modify profile to update your':'','Modify profile to enable bash completion':''})
+		shutit.login(command='bash')
+		shutit.send('gcloud components update')
+		shutit.logout()
 		return True
 
 	def get_config(self, shutit):
@@ -42,6 +45,6 @@ def module():
 		'shutit.tk.sd.google_compute.google_compute', 158844782.0303,
 		description='Google compute engine resources',
 		maintainer='ian.miell@gmail.com',
-		depends=['shutit.tk.sd.make_certs.make_certs','shutit.tk.sd.curl.curl','shutit.tk.sd.which.which']
+		depends=['shutit.tk.sd.make_certs.make_certs','shutit.tk.sd.curl.curl','shutit.tk.sd.which.which','shutit.tk.sd.openssh.openssh']
 	)
 
