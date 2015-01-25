@@ -4,7 +4,7 @@
 from shutit_module import ShutItModule
 
 
-class docl(ShutItModule):
+class nmap(ShutItModule):
 
 
 	def is_installed(self, shutit):
@@ -12,9 +12,13 @@ class docl(ShutItModule):
 
 
 	def build(self, shutit):
-		shutit.send('mkdir -p /tmp/build/docl')
-		shutit.send('cd /tmp/build/docl')
-		shutit.send('gem install docl')
+		shutit.send('mkdir -p /tmp/build/nmap')
+		shutit.send('cd /tmp/build/nmap')
+		shutit.send('wget -qO- https://nmap.org/dist/nmap-6.47.tar.bz2 | bunzip2 -c | tar -xf -')
+		shutit.send('cd nmap*')
+		shutit.send('./configure')
+		shutit.send('make')
+		shutit.send('make install')
 		return True
 
 	def get_config(self, shutit):
@@ -27,7 +31,7 @@ class docl(ShutItModule):
 	#    return True
 
 	def finalize(self, shutit):
-		shutit.send('rm -rf /tmp/build/docl')
+		shutit.send('rm -rf /tmp/build/nmap')
 		return True
 
 	#def remove(self, shutit):
@@ -37,10 +41,10 @@ class docl(ShutItModule):
 	#	return True
 
 def module():
-	return docl(
-		'shutit.tk.sd.docl.docl', 158844782.03046,
-		description='docl',
+	return nmap(
+		'shutit.tk.sd.nmap.nmap', 158844782.0306,
+		description='nmap',
 		maintainer='ian.miell@gmail.com',
-		depends=['shutit.tk.sd.ruby.ruby','shutit.tk.sd.make_certs.make_certs','shutit.tk.sd.git.git']
+		depends=['shutit.tk.sd.make_certs.make_certs']
 	)
 
