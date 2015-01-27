@@ -4,7 +4,7 @@
 from shutit_module import ShutItModule
 
 
-class eatmydata(ShutItModule):
+class buildbot_slave(ShutItModule):
 
 
 	def is_installed(self, shutit):
@@ -12,12 +12,7 @@ class eatmydata(ShutItModule):
 
 
 	def build(self, shutit):
-		shutit.send('mkdir -p /tmp/build/eatmydata')
-		shutit.send('cd /tmp/build/eatmydata')
-		shutit.send('wget -qO- https://www.flamingspork.com/projects/libeatmydata/libeatmydata-105.tar.gz | tar -zxf -')
-		shutit.send('./configure --prefix=/usr')
-		shutit.send('make')
-		shutit.send('make install')
+		shutit.send('pip install buildbot_slave')
 		return True
 
 	def get_config(self, shutit):
@@ -30,7 +25,7 @@ class eatmydata(ShutItModule):
 	#    return True
 
 	def finalize(self, shutit):
-		shutit.send('rm -rf /tmp/build/eatmydata')
+		shutit.send('rm -rf /tmp/build/buildbot_slave')
 		return True
 
 	#def remove(self, shutit):
@@ -40,10 +35,10 @@ class eatmydata(ShutItModule):
 	#	return True
 
 def module():
-	return eatmydata(
-		'shutit.tk.sd.eatmydata.eatmydata', 158844782.0313,
-		description='eatmydata',
+	return buildbot_slave(
+		'shutit.tk.sd.buildbot_slave.buildbot_slave', 158844782.0315,
+		description='python buildbot slave',
 		maintainer='ian.miell@gmail.com',
-		depends=['shutit.tk.sd.make_certs.make_certs']
+		depends=['shutit.tk.sd.virtualenv.virtualenv']
 	)
 
