@@ -15,6 +15,7 @@ class inotify_tools(ShutItModule):
 		shutit.send('mkdir -p /tmp/build/inotify_tools')
 		shutit.send('cd /tmp/build/inotify_tools')
 		shutit.send('wget -qO- http://github.com/downloads/rvoicilas/inotify-tools/inotify-tools-3.14.tar.gz | tar -zxf -')
+		shutit.send('cd inotify*')
 		shutit.send('./configure --prefix=/usr')
 		shutit.send('make')
 		shutit.send('make install')
