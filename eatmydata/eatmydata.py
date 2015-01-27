@@ -44,6 +44,6 @@ def module():
 		'shutit.tk.sd.eatmydata.eatmydata', 158844782.031,
 		description='eatmydata',
 		maintainer='ian.miell@gmail.com',
-		depends=['shutit.tk.make_certs.make_certs']
+		depends=['shutit.tk.sd.make_certs.make_certs']
 	)
 
