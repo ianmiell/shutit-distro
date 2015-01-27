@@ -4,7 +4,7 @@
 from shutit_module import ShutItModule
 
 
-class inotify_tools(ShutItModule):
+class strace(ShutItModule):
 
 
 	def is_installed(self, shutit):
@@ -12,10 +12,10 @@ class inotify_tools(ShutItModule):
 
 
 	def build(self, shutit):
-		shutit.send('mkdir -p /tmp/build/inotify_tools')
-		shutit.send('cd /tmp/build/inotify_tools')
-		shutit.send('wget -qO- http://github.com/downloads/rvoicilas/inotify-tools/inotify-tools-3.14.tar.gz | tar -zxf -')
-		shutit.send('cd inotify*')
+		shutit.send('mkdir -p /tmp/build/strace')
+		shutit.send('cd /tmp/build/strace')
+		shutit.send('wget -qO- http://sourceforge.net/projects/strace/files/strace/4.6/strace-4.6.tar.xz | xz -d | tar -xf -')
+		shutit.send('cd strace*')
 		shutit.send('./configure --prefix=/usr')
 		shutit.send('make')
 		shutit.send('make install')
@@ -31,7 +31,7 @@ class inotify_tools(ShutItModule):
 	#    return True
 
 	def finalize(self, shutit):
-		shutit.send('rm -rf /tmp/build/inotify_tools')
+		shutit.send('rm -rf /tmp/build/strace')
 		return True
 
 	#def remove(self, shutit):
@@ -41,10 +41,10 @@ class inotify_tools(ShutItModule):
 	#	return True
 
 def module():
-	return inotify_tools(
-		'shutit.tk.sd.inotify_tools.inotify_tools', 158844782.0308,
-		description='inotify_tools',
+	return strace(
+		'shutit.tk.sd.strace.strace', 158844782.0309,
+		description='strace',
 		maintainer='ian.miell@gmail.com',
-		depends=['shutit.tk.sd.make_certs.make_certs']
+		depends=['shutit.tk.setup']
 	)
 
