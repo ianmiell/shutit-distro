@@ -44,6 +44,6 @@ def module():
 		'shutit.tk.sd.inotify_tools.inotify_tools', 158844782.0308,
 		description='inotify_tools',
 		maintainer='ian.miell@gmail.com',
-		depends=['shutit.tk.setup']
+		depends=['shutit.tk.sd.make_certs.make_certs']
 	)
 
