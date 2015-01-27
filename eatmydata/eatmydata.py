@@ -41,7 +41,7 @@ class eatmydata(ShutItModule):
 
 def module():
 	return eatmydata(
-		'shutit.tk.sd.eatmydata.eatmydata', 158844782.0309,
+		'shutit.tk.sd.eatmydata.eatmydata', 158844782.031,
 		description='eatmydata',
 		maintainer='ian.miell@gmail.com',
 		depends=['shutit.tk.make_certs.make_certs']
