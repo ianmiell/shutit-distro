@@ -16,6 +16,7 @@ class shutit(ShutItModule):
 		shutit.send('git clone https://github.com/ianmiell/shutit.git')
 		shutit.send('cd shutit')
 		shutit.send('pip install -r requirements.txt')
+		shutit.add_to_bashrc('export PATH=$PATH:/opt/shutit')
 		return True
 
 def module():
