@@ -19,7 +19,7 @@ class react(ShutItModule):
 
 def module():
 	return react(
-		'shutit.tk.react.react.react.react', 158844782.0302,
+		'shutit.tk.sd.react.react', 158844782.0302,
 		description='',
 		maintainer='',
 		depends=['shutit.tk.sd.node.node']
