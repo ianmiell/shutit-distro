@@ -32,6 +32,6 @@ def module():
 		'shutit.tk.sd.python_pip.python_pip', 158844782.0068,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.make_certs.make_certs']
+		depends=['shutit.tk.sd.python2.python2']
 	)
 
