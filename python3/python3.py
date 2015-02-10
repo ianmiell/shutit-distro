@@ -18,8 +18,8 @@ class python3(ShutItModule):
 		shutit.send('./configure --prefix=/usr --enable-shared --with-system-expat --with-system-ffi --enable-unicode=ucs4 --without-ensurepip')
 		shutit.send('make')
 		shutit.send('make install',check_exit=False) # why? seems ok
-		shutit.send('/usr/lib/libpython3.4m.so')
-		shutit.send('/usr/lib/libpython3.so')
+		shutit.send('chmod -v 755 /usr/lib/libpython3.4m.so')
+		shutit.send('chmod -v 755 /usr/lib/libpython3.so')
 		return True
 
 	#def get_config(self, shutit):

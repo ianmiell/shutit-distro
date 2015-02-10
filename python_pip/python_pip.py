@@ -7,10 +7,15 @@ from shutit_module import ShutItModule
 class python_pip(ShutItModule):
 
 
+	# We need a python installed
+	def check_ready(self, shutit):
+		return True
+
 	def is_installed(self, shutit):
 		return shutit.file_exists('/root/shutit_build/module_record/' + self.module_id + '/built')
 
 	def build(self, shutit):
+		shutit.send('python --version')
 		shutit.send('wget -qO- https://bootstrap.pypa.io/get-pip.py | python')
 		return True
 
@@ -32,6 +37,6 @@ def module():
 		'shutit.tk.sd.python_pip.python_pip', 158844782.0068,
 		description='',
 		maintainer='',
-		depends=['shutit.tk.sd.python2.python2']
+		depends=['shutit.tk.sd.make_certs.make_certs']
 	)
 
