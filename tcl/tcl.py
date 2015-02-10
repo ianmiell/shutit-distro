@@ -13,7 +13,8 @@ class tcl(ShutItModule):
 	def build(self, shutit):
 		shutit.send('mkdir -p /tmp/build/tcl')
 		shutit.send('cd /tmp/build/tcl')
-		shutit.send('wget -qO- http://downloads.sourceforge.net/tcl/tcl8.6.3-src.tar.gz | tar -zxf -')
+		shutit.get_url('tcl8.6.3-src.tar.gz',['ftp://ftp.tcl.tk/pub/tcl/tcl8_6','http://downloads.sourceforge.net/tcl'])
+		shutit.send('tar -zxf tcl8.6.3-src.tar.gz')
 		shutit.send('cd tcl8*')
 		shutit.send('export SRCDIR=`pwd`')
 		shutit.send('cd unix')
