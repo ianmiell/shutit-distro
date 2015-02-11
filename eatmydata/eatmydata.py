@@ -15,6 +15,7 @@ class eatmydata(ShutItModule):
 		shutit.send('mkdir -p /tmp/build/eatmydata')
 		shutit.send('cd /tmp/build/eatmydata')
 		shutit.send('wget -qO- https://www.flamingspork.com/projects/libeatmydata/libeatmydata-105.tar.gz | tar -zxf -')
+		shutit.send('cd lib*')
 		shutit.send('./configure --prefix=/usr')
 		shutit.send('make')
 		shutit.send('make install')

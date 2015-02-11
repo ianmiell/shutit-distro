@@ -14,7 +14,7 @@ class sgml_common(ShutItModule):
 	def build(self, shutit):
 		shutit.send('mkdir -p /tmp/build/sgml_common')
 		shutit.send('cd /tmp/build/sgml_common')
-		shutit.send('wget -qO- ftp://sources.redhat.com/pub/docbook-tools/new-trials/SOURCES/sgml-common-0.6.3.tgz | tar -zxf -')
+		shutit.send('wget -qO- http://pkgs.fedoraproject.org/repo/pkgs/sgml-common/sgml-common-0.6.3.tgz/103c9828f24820df86e55e7862e28974/sgml-common-0.6.3.tgz | tar -zxf -')
 		shutit.send('cd sgml-common*')
 		shutit.send('wget -qO- http://www.linuxfromscratch.org/patches/blfs/7.6/sgml-common-0.6.3-manpage-1.patch | patch -Np1 -i -')
 		shutit.send('autoreconf -f -i')
