@@ -19,7 +19,7 @@ class libtirpc(ShutItModule):
 		shutit.send('make')
 		shutit.send('make install')
 		shutit.send('mv -v /usr/lib/libtirpc.so.* /lib')
-		shutit.send('ln -sfv ../../lib/libtirpc.so.1.0.10 /usr/lib/libtirpc.so')
+		shutit.send('ln -sf ../../lib/libtirpc.so.1.0.10 /usr/lib/libtirpc.so')
 		return True
 
 	#def get_config(self, shutit):

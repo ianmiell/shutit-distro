@@ -22,7 +22,7 @@ class linux_pam(ShutItModule):
 		shutit.send('make')
 		shutit.send('make install')
 		shutit.send('mv -v /usr/lib/libcrack.so.* /lib')
-		shutit.send('ln -sfv ../../lib/$(readlink /usr/lib/libcrack.so) /usr/lib/libcrack.so')
+		shutit.send('ln -sf ../../lib/$(readlink /usr/lib/libcrack.so) /usr/lib/libcrack.so')
 		shutit.send('install -v -m644 -D ../cracklib-words-20080507.gz /usr/share/dict/cracklib-words.gz')
 		shutit.send('gunzip -v /usr/share/dict/cracklib-words.gz')
 		shutit.send('ln -v -sf cracklib-words /usr/share/dict/words')
@@ -57,11 +57,11 @@ class linux_pam(ShutItModule):
 		shutit.send('make install')
 		shutit.send('chmod -v 4755 /sbin/unix_chkpwd')
 		shutit.send('mv -v /usr/lib/libpam.so.* /lib')
-		shutit.send('ln -sfv ../../lib/$(readlink /usr/lib/libpam.so) /usr/lib/libpam.so')
+		shutit.send('ln -sf ../../lib/$(readlink /usr/lib/libpam.so) /usr/lib/libpam.so')
 		shutit.send('mv -v /usr/lib/libpam_misc.so.* /lib')
-		shutit.send('ln -sfv ../../lib/$(readlink /usr/lib/libpam_misc.so) /usr/lib/libpam_misc.so')
+		shutit.send('ln -sf ../../lib/$(readlink /usr/lib/libpam_misc.so) /usr/lib/libpam_misc.so')
 		shutit.send('mv -v /usr/lib/libpamc.so.* /lib')
-		shutit.send('ln -sfv ../../lib/$(readlink /usr/lib/libpamc.so) /usr/lib/libpamc.so')
+		shutit.send('ln -sf ../../lib/$(readlink /usr/lib/libpamc.so) /usr/lib/libpamc.so')
 		# From here http://www.linuxfromscratch.org/blfs/view/svn/postlfs/shadow.html
  		# Configuring Linux-PAM to Work with Shadow 
 		shutit.send('''install -v -m644 /etc/login.defs /etc/login.defs.orig''')

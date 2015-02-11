@@ -30,10 +30,10 @@ class llvm(ShutItModule):
 		shutit.send('chmod -v 644 /usr/lib/libLTO*.a')
 		shutit.send('install -v -dm755 /usr/lib/clang-analyzer')
 		shutit.send('cp -rfv tools/clang/tools/scan-build /usr/lib/clang-analyzer/')
-		shutit.send('ln -sfv ../lib/clang-analyzer/scan-build/scan-build /usr/bin/')
-		shutit.send('cp -rfv tools/clang/tools/scan-view /usr/lib/clang-analyzer/')
-		shutit.send('ln -sfv ../lib/clang-analyzer/scan-view/scan-view /usr/bin/')
-		shutit.send('ln -sfv /usr/bin/clang /usr/lib/clang-analyzer/scan-build/')
+		shutit.send('ln -sf ../lib/clang-analyzer/scan-build/scan-build /usr/bin/')
+		shutit.send('cp -rf tools/clang/tools/scan-view /usr/lib/clang-analyzer/')
+		shutit.send('ln -sf ../lib/clang-analyzer/scan-view/scan-view /usr/bin/')
+		shutit.send('ln -sf /usr/bin/clang /usr/lib/clang-analyzer/scan-build/')
 		shutit.send('mv -v /usr/lib/clang-analyzer/scan-build/scan-build.1 /usr/share/man/man1/')
 		return True
 

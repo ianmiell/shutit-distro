@@ -20,7 +20,7 @@ class pcre(ShutItModule):
 		shutit.send('make')
 		shutit.send('make install')
 		shutit.send('mv -v /usr/lib/libpcre.so.* /lib')
-		shutit.send('ln -sfv ../../lib/$(readlink /usr/lib/libpcre.so) /usr/lib/libpcre.so')
+		shutit.send('ln -sf ../../lib/$(readlink /usr/lib/libpcre.so) /usr/lib/libpcre.so')
 		return True
 
 	#def get_config(self, shutit):

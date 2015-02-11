@@ -20,7 +20,7 @@ class attr(ShutItModule):
 		shutit.send('make install install-dev install-lib')
 		shutit.send('chmod -v 755 /usr/lib/libattr.so')
 		shutit.send('mv -v /usr/lib/libattr.so.* /lib')
-		shutit.send('ln -sfv ../../lib/$(readlink /usr/lib/libattr.so) /usr/lib/libattr.so')
+		shutit.send('ln -sf ../../lib/$(readlink /usr/lib/libattr.so) /usr/lib/libattr.so')
 		return True
 
 	#def get_config(self, shutit):

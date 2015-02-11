@@ -26,7 +26,8 @@ class make_certs(ShutItModule):
 		shutit.send('cp -v certs/*.pem /etc/ssl/certs')
 		shutit.send('c_rehash')
 		shutit.send('install BLFS-ca-bundle*.crt /etc/ssl/ca-bundle.crt')
-		shutit.send('ln -sfv ../ca-bundle.crt /etc/ssl/certs/ca-certificates.crt')
+		# For some reason ln -sfv fails... bit worrying - does it do something odd with the terminal?
+		shutit.send('ln -sf ../ca-bundle.crt /etc/ssl/certs/ca-certificates.crt')
 		return True
 
 	#def get_config(self, shutit):

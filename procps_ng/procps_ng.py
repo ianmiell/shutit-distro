@@ -22,7 +22,7 @@ class procps_ng(ShutItModule):
 		shutit.send('make install')
 		shutit.send('mv -v /usr/bin/pidof /bin')
 		shutit.send('mv -v /usr/lib/libprocps.so.* /lib')
-		shutit.send('ln -sfv ../../lib/$(readlink /usr/lib/libprocps.so) /usr/lib/libprocps.so')
+		shutit.send('ln -sf ../../lib/$(readlink /usr/lib/libprocps.so) /usr/lib/libprocps.so')
 		return True
 
 	#def get_config(self, shutit):
