@@ -6,10 +6,6 @@ from shutit_module import ShutItModule
 
 class make_certs(ShutItModule):
 
-
-	def is_installed(self, shutit):
-		return shutit.file_exists('/root/shutit_build/module_record/' + self.module_id + '/built')
-
 	def build(self, shutit):
 		shutit.send('mkdir -p /tmp/build/make_certs')
 		shutit.send('cd /tmp/build/make_certs')

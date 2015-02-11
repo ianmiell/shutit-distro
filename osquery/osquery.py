@@ -6,11 +6,6 @@ from shutit_module import ShutItModule
 
 class osquery(ShutItModule):
 
-
-	def is_installed(self, shutit):
-		return False
-
-
 	def build(self, shutit):
 		shutit.send('mkdir -p /tmp/build/osquery')
 		shutit.send('cd /tmp/build/osquery')

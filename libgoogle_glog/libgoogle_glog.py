@@ -6,10 +6,6 @@ from shutit_module import ShutItModule
 
 class libgoogle_glog(ShutItModule):
 
-
-	def is_installed(self, shutit):
-		return shutit.file_exists('/root/shutit_build/module_record/' + self.module_id + '/built')
-
 	def build(self, shutit):
 		shutit.send('mkdir -p /tmp/build/libgoogle_glog')
 		shutit.send('cd /tmp/build/libgoogle_glog')

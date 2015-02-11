@@ -6,11 +6,6 @@ from shutit_module import ShutItModule
 
 class rsync(ShutItModule):
 
-
-	def is_installed(self, shutit):
-		return False
-
-
 	def build(self, shutit):
 		shutit.send('mkdir -p /tmp/build/rsync')
 		shutit.send('cd /tmp/build/rsync')

@@ -6,11 +6,6 @@ from shutit_module import ShutItModule
 
 class apache_portable_runtime_util(ShutItModule):
 
-
-	def is_installed(self, shutit):
-		return shutit.file_exists('/root/shutit_build/module_record/' + self.module_id + '/built')
-
-
 	def build(self, shutit):
 		shutit.send('mkdir /tmp/build/apr-util')
 		shutit.send('cd /tmp/build/apr-util')

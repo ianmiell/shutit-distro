@@ -6,11 +6,6 @@ from shutit_module import ShutItModule
 
 class bind(ShutItModule):
 
-
-	def is_installed(self, shutit):
-		return shutit.file_exists('/root/shutit_build/module_record/' + self.module_id + '/built')
-
-
 	def build(self, shutit):
 		# TODO: follow this: http://www.linuxfromscratch.org/blfs/view/cvs/server/bind.html
 		shutit.send('mkdir -p /tmp/build/bind')

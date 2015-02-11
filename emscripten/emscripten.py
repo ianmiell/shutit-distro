@@ -6,10 +6,6 @@ from shutit_module import ShutItModule
 
 class emscripten(ShutItModule):
 
-
-	def is_installed(self, shutit):
-		return shutit.file_exists('/root/shutit_build/module_record/' + self.module_id + '/built')
-
 	def build(self, shutit):
 		# http://kripken.github.io/emscripten-site/docs/getting_started/downloads.html#sdk-download-and-install
 		# then: http://kripken.github.io/emscripten-site/docs/building_from_source/building_emscripten_from_source_on_linux.html

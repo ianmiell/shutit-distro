@@ -6,11 +6,6 @@ from shutit_module import ShutItModule
 
 class asciidoc(ShutItModule):
 
-
-	def is_installed(self, shutit):
-		return shutit.file_exists('/root/shutit_build/module_record/' + self.module_id + '/built')
-
-
 	def build(self, shutit):
 		#http://www.methods.co.nz/asciidoc/INSTALL.html#X1
 		shutit.send('mkdir -p /tmp/build/asciidoc')

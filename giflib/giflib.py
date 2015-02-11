@@ -6,10 +6,6 @@ from shutit_module import ShutItModule
 
 class giflib(ShutItModule):
 
-
-	def is_installed(self, shutit):
-		return shutit.file_exists('/root/shutit_build/module_record/' + self.module_id + '/built')
-
 	def build(self, shutit):
 		#www.linuxfromscratch.org/blfs/view/svn/general/giflib.html
 		shutit.send('mkdir -p /tmp/build/giflib')

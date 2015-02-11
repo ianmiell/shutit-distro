@@ -6,11 +6,6 @@ from shutit_module import ShutItModule
 
 class mariadb(ShutItModule):
 
-
-	def is_installed(self, shutit):
-		return False
-
-
 	def build(self, shutit):
 		shutit.send('mkdir -p /tmp/build/mariadb')
 		shutit.send('cd /tmp/build/mariadb')

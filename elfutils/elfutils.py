@@ -5,10 +5,6 @@ from shutit_module import ShutItModule
 
 class elfutils(ShutItModule):
 
-
-	def is_installed(self, shutit):
-		return shutit.file_exists('/root/shutit_build/module_record/' + self.module_id + '/built')
-
 	def build(self, shutit):
 		shutit.send('wget -qO- https://fedorahosted.org/releases/e/l/elfutils/0.161/elfutils-0.161.tar.bz2 | bunzip2 -c | tar -xf -')
 		shutit.send('cd elfutils-*')

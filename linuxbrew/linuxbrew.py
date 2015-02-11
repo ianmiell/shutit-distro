@@ -6,10 +6,6 @@ from shutit_module import ShutItModule
 
 class linuxbrew(ShutItModule):
 
-
-	def is_installed(self, shutit):
-		return shutit.file_exists('/root/shutit_build/module_record/' + self.module_id + '/built')
-
 	def build(self, shutit):
 		shutit.send('cd /opt')
 		shutit.send('git clone https://github.com/Homebrew/linuxbrew.git ~/.linuxbrew')

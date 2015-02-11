@@ -6,10 +6,6 @@ from shutit_module import ShutItModule
 
 class mit_kerberos_v5(ShutItModule):
 
-
-	def is_installed(self, shutit):
-		return shutit.file_exists('/root/shutit_build/module_record/' + self.module_id + '/built')
-
 	def build(self, shutit):
 		shutit.send('mkdir -p /tmp/build/mit_kerberos_v5')
 		shutit.send('cd /tmp/build/mit_kerberos_v5')
