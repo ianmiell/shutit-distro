@@ -7,7 +7,7 @@ RUN git clone https://github.com/ianmiell/shutit.git
 WORKDIR shutit
 RUN pip install -r requirements.txt
 
-WORKDIR /space/git/shutit/apache_portable_runtime <- TODO You will need to to change this
+WORKDIR /space/git/shutit/apache_portable_runtime
 RUN /opt/shutit/shutit build --shutit_module_path /opt/shutit/library --delivery bash
 
 CMD ["/bin/bash"] 
