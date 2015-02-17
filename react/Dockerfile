@@ -1,6 +1,5 @@
 FROM imiell/sd_node
 
-RUN apt-get install -y -qq curl git python-pip wget
 WORKDIR /opt
 RUN git clone https://github.com/ianmiell/shutit-distro.git
 
