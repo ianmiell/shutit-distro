@@ -20,23 +20,14 @@ class nss(ShutItModule):
 		shutit.send('install -v -m755 -d /usr/include/nss')
 		shutit.send('cp -v -RL {public,private}/nss/* /usr/include/nss')
 		shutit.send('chmod -v 644 /usr/include/nss/*')
-		shutit.send('install -v -m755 Linux*/bin/{certutil,nss-config,pk12util} /usr/bin')
-		shutit.send('install -v -m644 Linux*/lib/pkgconfig/nss.pc /usr/lib/pkgconfig')
+		shutit.send('install -v -m755 Linux*/bin/{certutil,pk12util} /usr/bin')
+		#shutit.send('install -v -m755 Linux*/bin/{certutil,nss-config,pk12util} /usr/bin')
+		#shutit.send('install -v -m644 Linux*/lib/pkgconfig/nss.pc /usr/lib/pkgconfig')
 		return True
-
-	#def get_config(self, shutit):
-	#	shutit.get_config(self.module_id,'item','default')
-	#	return True
 
 	def finalize(self, shutit):
 		shutit.send('rm -rf /tmp/build/nss')
 		return True
-
-	#def remove(self, shutit):
-	#	return True
-
-	#def test(self, shutit):
-	#	return True
 
 def module():
 	return nss(
