@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM imiell/sd_shutit
 
 RUN apt-get update
 RUN apt-get install -y -qq curl git python-pip wget wget
