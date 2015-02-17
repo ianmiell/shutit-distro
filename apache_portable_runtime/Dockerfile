@@ -8,7 +8,7 @@ RUN git clone https://github.com/ianmiell/shutit.git
 WORKDIR shutit
 RUN pip install -r requirements.txt
 
-WORKDIR /space/git/shutit-distro/alsa_lib
+WORKDIR /space/git/shutit-distro/apache_portable_runtime
 RUN /opt/shutit/shutit build --shutit_module_path .. --delivery bash
 
 CMD ["/bin/bash"] 
