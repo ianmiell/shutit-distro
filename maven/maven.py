@@ -17,31 +17,15 @@ class maven(ShutItModule):
 		shutit.send('ant')
 		return True
 
-	def get_config(self, shutit):
-		#shutit.get_config(self.module_id,'minimize',boolean=True,default=True) #TODO
-		return True
-
-	#def start(self, shutit):
-	#	return True
-
-	#def stop(self, shutit):
-	#    return True
-
 	def finalize(self, shutit):
 		shutit.send('rm -rf /tmp/build/maven')
 		return True
-
-	#def remove(self, shutit):
-	#	return True
-
-	#def test(self, shutit):
-	#	return True
 
 def module():
 	return maven(
 		'shutit.tk.sd.maven.maven', 158844782.03045,
 		description='Apache maven',
 		maintainer='ian.miell@gmail.com',
-		depends=['shutit.tk.sd.openjdk.openjdk','shutit.tk.sd.ant.ant','shutit.tk.sd.nss.nss','shutit.tk.sd.xmlto.xmlto']
+		depends=['shutit.tk.sd.openjdk.openjdk','shutit.tk.sd.ant.ant','shutit.tk.sd.nss.nss','shutit.tk.sd.libxml2.libxml2']
 	)
 
