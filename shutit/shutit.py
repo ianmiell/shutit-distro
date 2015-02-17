@@ -18,8 +18,8 @@ class shutit(ShutItModule):
 def module():
 	return shutit(
 		'shutit.tk.sd.shutit.shutit', 158844782.0299,
-		description='',
-		maintainer='',
+		description='A ShutIt environment from which you can reliably build an image in delivery --bash, built from source',
+		maintainer='ian.miell@gmail.com',
 		depends=['shutit.tk.sd.git.git','shutit.tk.sd.curl.curl','shutit.tk.sd.python_pip.python_pip']
 	)
 
