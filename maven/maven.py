@@ -26,6 +26,6 @@ def module():
 		'shutit.tk.sd.maven.maven', 158844782.03045,
 		description='Apache maven',
 		maintainer='ian.miell@gmail.com',
-		depends=['shutit.tk.sd.openjdk.openjdk','shutit.tk.sd.ant.ant','shutit.tk.sd.nss.nss','shutit.tk.sd.libxml2.libxml2']
+		depends=['shutit.tk.sd.openjdk.openjdk','shutit.tk.sd.ant.ant','shutit.tk.sd.nss.nss']
 	)
 
