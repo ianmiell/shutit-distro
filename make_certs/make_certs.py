@@ -26,19 +26,9 @@ class make_certs(ShutItModule):
 		shutit.send('ln -sf ../ca-bundle.crt /etc/ssl/certs/ca-certificates.crt')
 		return True
 
-	#def get_config(self, shutit):
-	#	shutit.get_config(self.module_id,'item','default')
-	#	return True
-
 	def finalize(self, shutit):
 		shutit.send('rm -rf /tmp/build/make_certs')
 		return True
-
-	#def remove(self, shutit):
-	#	return True
-
-	#def test(self, shutit):
-	#	return True
 
 def module():
 	return make_certs(
