@@ -7,7 +7,7 @@ RUN git clone https://github.com/ianmiell/shutit-distro.git
 WORKDIR shutit
 RUN pip install -r requirements.txt
 
-WORKDIR /home/imiell/shutitdist/python_pip <- TODO You will need to to change this
+WORKDIR /opt/shutit-distro/python_pip
 RUN /opt/shutit/shutit build --shutit_module_path .. --delivery bash
 
 CMD ["/bin/bash"] 

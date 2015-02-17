@@ -7,7 +7,7 @@ RUN git clone https://github.com/ianmiell/shutit-distro.git
 WORKDIR shutit
 RUN pip install -r requirements.txt
 
-WORKDIR /space/git/shutitdist/nettle <- TODO You will need to to change this
+WORKDIR /space/git/shutitdist/nettle
 RUN /opt/shutit/shutit build --shutit_module_path .. --delivery bash
 
 CMD ["/bin/bash"] 
