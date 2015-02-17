@@ -3,7 +3,7 @@ FROM imiell/sd_shutit
 WORKDIR /opt
 RUN git clone https://github.com/ianmiell/shutit-distro.git
 
-WORKDIR /space/git/shutit-distro/pkg_config
+WORKDIR /opt/shutit-distro/pkg_config
 RUN /opt/shutit/shutit build --shutit_module_path .. --delivery bash
 
 CMD ["/bin/bash"] 
