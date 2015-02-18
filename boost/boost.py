@@ -9,7 +9,7 @@ class boost(ShutItModule):
 	def build(self, shutit):
 		shutit.send('mkdir -p /tmp/build/boost')
 		shutit.send('cd /tmp/build/boost')
-		shutit.get_url('boost_1_57_0.tar.bz2',['http://downloads.sourceforge.net/boost','http://ftp.osuosl.org/pub/blfs/svn/b'])
+		shutit.get_url('boost_1_57_0.tar.bz2',['http://ftp.osuosl.org/pub/blfs/svn/b','http://downloads.sourceforge.net/boost'])
 		shutit.send('bunzip2 -c boost_1_57_0.tar.bz2 | tar -xf -')
 		shutit.send('cd boost*')
 		shutit.send('''sed -e '1 i#ifndef Q_MOC_RUN' -e '$ a#endif' -i boost/type_traits/detail/has_binary_operator.hpp''')

@@ -10,7 +10,7 @@ class giflib(ShutItModule):
 		#www.linuxfromscratch.org/blfs/view/svn/general/giflib.html
 		shutit.send('mkdir -p /tmp/build/giflib')
 		shutit.send('cd /tmp/build/giflib')
-		shutit.get_url('giflib-5.1.0.tar.bz2',['http://downloads.sourceforge.net/giflib','http://ftp.cc.uoc.gr/mirrors/linux/lfs/LFS/conglomeration/giflib'])
+		shutit.get_url('giflib-5.1.0.tar.bz2',['http://ftp.cc.uoc.gr/mirrors/linux/lfs/LFS/conglomeration/giflib','http://downloads.sourceforge.net/giflib'])
 		shutit.send('bunzip2 -c giflib-5.1.0.tar.bz2 | tar -xf -')
 		shutit.send('cd giflib*')
 		shutit.send('./configure --prefix=/usr --disable-static')
