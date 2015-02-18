@@ -10,7 +10,8 @@ class asciidoc(ShutItModule):
 		#http://www.methods.co.nz/asciidoc/INSTALL.html#X1
 		shutit.send('mkdir -p /tmp/build/asciidoc')
 		shutit.send('cd /tmp/build/asciidoc')
-		shutit.send('wget -qO- http://downloads.sourceforge.net/project/asciidoc/asciidoc/' + shutit.cfg[self.module_id]['version'] + '/asciidoc-' + shutit.cfg[self.module_id]['version'] + '.tar.gz | tar -zxf -')
+		shutit.get_url('asciidoc-' + shutit.cfg[self.module_id]['version'] + '.tar.gz',['https://distfiles.macports.org/asciidoc/','http://downloads.sourceforge.net/project/asciidoc/asciidoc/' + shutit.cfg[self.module_id]['version']])
+		shutit.send('tar -zxf asciidoc-' + shutit.cfg[self.module_id]['version'] + '.tar.gz')
 		shutit.send('cd asciidoc-' + shutit.cfg[self.module_id]['version'])
 		shutit.send('./configure --prefix=/usr')
 		shutit.send('make')
