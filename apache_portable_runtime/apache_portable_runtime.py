@@ -9,7 +9,8 @@ class apache_portable_runtime(ShutItModule):
 	def build(self, shutit):
 		shutit.send('mkdir -p /tmp/build/apr')
 		shutit.send('cd /tmp/build/apr')
-		shutit.send('wget -qO- http://apache.mirrors.timporter.net//apr/apr-' + shutit.cfg[self.module_id]['version'] + '.tar.gz | tar -zxf -')
+		shutit.get_url('apr-1.5.1.tar.gz',['http://mirror.catn.com/pub/apache/apr','http://mirror.ox.ac.uk/sites/rsync.apache.org/apr'])
+		shutit.send('tar -zxf apr-1.5.1.tar.gz')
 		shutit.send('cd apr-' + shutit.cfg[self.module_id]['version'])
 		shutit.send('./configure --prefix=/usr')
 		shutit.send('make')
