@@ -9,11 +9,11 @@ class apache(ShutItModule):
 	def build(self, shutit):
 		shutit.send('mkdir -p /tmp/build/apache')
 		shutit.send('cd /tmp/build/apache')
-		shutit.send('wget -qO- http://archive.apache.org/dist/httpd/httpd-2.4.10.tar.bz2 | bunzip2 -c | tar -xf -')
+		shutit.send('wget -qO- http://archive.apache.org/dist/httpd/httpd-2.4.12.tar.bz2 | bunzip2 -c | tar -xf -')
 		shutit.send('cd httpd*')
 		shutit.send('groupadd -g 102 apache')
 		shutit.send('useradd -c "Apache Server" -d /srv/www -g apache -s /bin/false -u 102 apache')
-		shutit.send('wget -qO- http://www.linuxfromscratch.org/patches/blfs/svn/httpd-2.4.10-blfs_layout-1.patch | patch -Np1 -i -')
+		shutit.send('wget -qO- http://www.linuxfromscratch.org/patches/blfs/svn/httpd-2.4.12-blfs_layout-1.patch | patch -Np1 -i -')
 		shutit.send('''sed '/dir.*CFG_PREFIX/s@^@#@' -i support/apxs.in''')
 		shutit.send('./configure --enable-authnz-fcgi --enable-layout=BLFS --enable-mods-shared="all cgi" --enable-mpms-shared=all --enable-suexec=shared --with-apr=/usr/bin/apr-1-config --with-apr-util=/usr/bin/apu-1-config --with-suexec-bin=/usr/lib/httpd/suexec --with-suexec-caller=apache --with-suexec-docroot=/srv/www --with-suexec-logfile=/var/log/httpd/suexec.log --with-suexec-uidmin=100 --with-suexec-userdir=public_html')
 		shutit.send('make')

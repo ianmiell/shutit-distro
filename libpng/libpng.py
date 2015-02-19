@@ -11,7 +11,7 @@ class libpng(ShutItModule):
 		shutit.send('cd /tmp/build/libpng')
 		f = 'libpng-1.6.13.tar.xz'
 		shutit.get_url(f,['http://ftp.osuosl.org/pub/blfs/conglomeration/libpng','http://downloads.sourceforge.net/libpng'])
-		shutit.send('xz -d ' + f + '| tar -xf -')
+		shutit.send('cat ' + f + ' | xz -d - | tar -xf -')
 		shutit.send('cd libpng*')
 		shutit.send('wget -QO- http://downloads.sourceforge.net/libpng-apng/libpng-1.6.13-apng.patch.gz | patch -p1 -')
 		shutit.send('./configure --prefix=/usr --disable-static')
