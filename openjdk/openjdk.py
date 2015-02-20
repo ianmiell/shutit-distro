@@ -46,26 +46,15 @@ class openjdk(ShutItModule):
 		shutit.send('')
 		return True
 
-	#def get_config(self, shutit):
-	#	shutit.get_config(self.module_id,'item','default')
-	#	return True
-
 	def finalize(self, shutit):
 		shutit.send('rm -rf /tmp/build/openjdk')
 		return True
 
-	#def remove(self, shutit):
-	#	return True
-
-	#def test(self, shutit):
-	#	return True
-
-# TODO: NSS? 
 def module():
 	return openjdk(
 		'shutit.tk.sd.openjdk.openjdk', 158844782.0241,
-		description='',
-		maintainer='',
+		description='Java built from java binary',
+		maintainer='ian.miell@gmail.com',
 		depends=['shutit.tk.sd.junit.junit','shutit.tk.sd.alsa_lib.alsa_lib','shutit.tk.sd.cpio.cpio','shutit.tk.sd.cups.cups','shutit.tk.sd.which.which','shutit.tk.sd.xorg_libs.xorg_libs','shutit.tk.sd.zip.zip','shutit.tk.sd.giflib.giflib']
 	)
 
