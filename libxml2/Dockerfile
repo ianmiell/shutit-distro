@@ -1,6 +1,6 @@
 FROM imiell/sd_shutit
 
-RUN apt-get install -y -qq curl git python-pip
+RUN apt-get update && apt-get install -y -qq curl git python-pip
 WORKDIR /opt
 RUN git clone https://github.com/ianmiell/shutit-distro.git
 
