@@ -18,25 +18,9 @@ class osquery(ShutItModule):
 		shutit.send('make install')
 		return True
 
-	def get_config(self, shutit):
-		#shutit.get_config(self.module_id,'minimize',boolean=True,default=True) #TODO
-		return True
-
-	#def start(self, shutit):
-	#	return True
-
-	#def stop(self, shutit):
-	#    return True
-
 	def finalize(self, shutit):
 		shutit.send('rm -rf /tmp/build/osquery')
 		return True
-
-	#def remove(self, shutit):
-	#	return True
-
-	#def test(self, shutit):
-	#	return True
 
 def module():
 	return osquery(
