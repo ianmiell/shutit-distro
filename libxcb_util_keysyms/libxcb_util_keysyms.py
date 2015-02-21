@@ -25,7 +25,7 @@ class libxcb_util_keysyms(ShutItModule):
 
 def module():
 	return libxcb_util_keysyms(
-		'shutit.tk.sd.libxcb_util_keysyms.libxcb_util_keysyms', 158844782.008701,
+		'shutit.tk.sd.libxcb_util_keysyms.libxcb_util_keysyms', 158844782.0087015,
 		description='',
 		maintainer='',
 		depends=['shutit.tk.sd.libxcb.libxcb']
