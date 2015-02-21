@@ -43,6 +43,6 @@ def module():
 		'shutit.tk.sd.osquery.osquery', 158844782.029,
 		description='Facebook\'s OSQuery sql tool',
 		maintainer='ian.miell@gmail.com',
-		depends=['shutit.tk.sd.git.git','shutit.tk.sd.qt4.qt4','shutit.tk.sd.sqlite.sqlite','shutit.tk.sd.python_pip.python_pip','shutit.tk.sd.libevent.libevent','shutit.tk.sd.boost.boost','shutit.tk.sd.libgoogle_glog.libgoogle_glog','shutit.tk.sd.rpm.rpm','shutit.tk.sd.libsnappy.libsnappy','shutit.tk.sd.cmake.cmake','shutit.tk.sd.doxygen.doxygen','shutit.tk.sd.rocksdb.rocksdb','shutit.tk.sd.thrift.thrift','shutit.tk.sd.dpkg.dpkg','shutit.tk.sd.unwind.unwind','shutit.tk.sd.apt.apt']
+		depends=['shutit.tk.sd.git.git','shutit.tk.sd.qt4.qt4','shutit.tk.sd.sqlite.sqlite','shutit.tk.sd.python_pip.python_pip','shutit.tk.sd.libevent.libevent','shutit.tk.sd.boost.boost','shutit.tk.sd.libgoogle_glog.libgoogle_glog','shutit.tk.sd.rpm.rpm','shutit.tk.sd.libsnappy.libsnappy','shutit.tk.sd.cmake.cmake','shutit.tk.sd.doxygen.doxygen','shutit.tk.sd.rocksdb.rocksdb','shutit.tk.sd.thrift.thrift','shutit.tk.sd.dpkg.dpkg','shutit.tk.sd.unwind.unwind','shutit.tk.sd.apt.apt','shutit.tk.sd.lsb_release.lsb_release']
 	)
 
