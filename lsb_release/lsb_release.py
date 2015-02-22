@@ -10,6 +10,7 @@ class lsb_release(ShutItModule):
 		shutit.send('mkdir -p /tmp/build/lsb_release')
 		shutit.send('cd /tmp/build/lsb_release')
 		shutit.get_url('lsb-release-1.4.tar.gz',['http://sourceforge.net/projects/lsb/files/lsb_release/1.4'])
+		shutit.send('tar -zxf lsb-release-1.4.tar.gz')
 		shutit.send('cd lsb*')
 		shutit.send('sed -i "s|n/a|unavailable|" lsb_release')
 		shutit.send('./help2man -N --include ./lsb_release.examples --alt_version_key=program_version ./lsb_release > lsb_release.1')
