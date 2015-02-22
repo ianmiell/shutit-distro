@@ -32,28 +32,17 @@ class xorg_apps(ShutItModule):
 			  esac
 			  ./configure $XORG_CONFIG
 			  make
-			  as_root make install
+			  make install
 			  popd
 			  rm -rf $packagedir
 			done
 		''')
-
 		shutit.logout()
 		return True
-
-	#def get_config(self, shutit):
-	#	shutit.get_config(self.module_id,'item','default')
-	#	return True
 
 	def finalize(self, shutit):
 		shutit.send('rm -rf /tmp/build/xorg_apps')
 		return True
-
-	#def remove(self, shutit):
-	#	return True
-
-	#def test(self, shutit):
-	#	return True
 
 def module():
 	return xorg_apps(
