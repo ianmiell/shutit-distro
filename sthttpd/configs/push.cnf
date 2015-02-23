@@ -10,7 +10,7 @@
 rm:false
 
 [repository]
-name:sthttpd
+name:sd_sthttpd
 #push:yes
 # COPY THESE TO YOUR ~/.shutit/config FILE AND FILL OUT ITEMS IN CAPS
 #user:YOUR_USERNAME
