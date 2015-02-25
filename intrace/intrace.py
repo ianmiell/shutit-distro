@@ -9,7 +9,7 @@ class intrace(ShutItModule):
 		shutit.send('mkdir -p /tmp/build/intrace')
 		shutit.send('cd /tmp/build/intrace')
 		shutit.get_url('intrace-1.5.tgz',['https://intrace.googlecode.com/files'])
-		shutit.send('tar -zxf files/intrace-1.5.tgz')
+		shutit.send('tar -zxf intrace-1.5.tgz')
 		shutit.send('cd intrace*')
 		shutit.send('''sed -i 's/-Werror//' Makefile''')
 		shutit.send('make')
@@ -23,8 +23,8 @@ class intrace(ShutItModule):
 def module():
 	return intrace(
 		'shutit.tk.sd.intrace.intrace', 158844782.027,
-		description='',
-		maintainer='',
+		description='Intrace - like traceroute but piggybacks TCP',
+		maintainer='ian.miell@gmail.com',
 		depends=['shutit.tk.sd.make_certs.make_certs']
 	)
 
