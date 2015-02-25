@@ -11,7 +11,6 @@ class mono(ShutItModule):
 		shutit.send('cd /tmp/build/mono')
 		shutit.get_url('mono-3.10.0.tar.bz2',['http://download.mono-project.com/sources/mono'])
 		shutit.send('bunzip2 mono-3.10.0.tar.bz2')
-		shutit.send('rm mono-3.10.0.tar.bz2')
 		shutit.send('tar -xf mono-3.10.0.tar')
 		shutit.send('cd mono-*')
 		shutit.send('./configure --prefix=/usr')
