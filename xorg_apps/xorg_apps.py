@@ -37,6 +37,7 @@ class xorg_apps(ShutItModule):
 			  rm -rf $packagedir
 			done
 		''')
+		shutit.pause_point('mkfontscale')
 		shutit.logout()
 		return True
 
