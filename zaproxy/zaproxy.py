@@ -20,7 +20,7 @@ class zaproxy(ShutItModule):
 
 def module():
 	return zaproxy(
-		'shutit.tk.sd.zaproxy.zaproxy', 158844782.0319,
+		'shutit.tk.sd.zaproxy.zaproxy', 158844782.0321,
 		description='HTTP intercepting proxy',
 		maintainer='ian.miell@gmail.com',
 		depends=['shutit.tk.sd.openjdk.openjdk']

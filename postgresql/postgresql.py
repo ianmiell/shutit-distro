@@ -19,19 +19,9 @@ class postgresql(ShutItModule):
 		# TODO: server http://www.linuxfromscratch.org/blfs/view/svn/server/postgresql.html
 		return True
 
-	#def get_config(self, shutit):
-	#	shutit.get_config(self.module_id,'item','default')
-	#	return True
-
 	def finalize(self, shutit):
 		shutit.send('rm -rf /tmp/build/postgresql')
 		return True
-
-	#def remove(self, shutit):
-	#	return True
-
-	#def test(self, shutit):
-	#	return True
 
 def module():
 	return postgresql(
