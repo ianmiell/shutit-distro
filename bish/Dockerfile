@@ -1,13 +1,8 @@
-FROM imiell/sd_base
+FROM imiell/sd_shutit
 
-RUN apt-get update
-RUN apt-get install -y -qq curl git python-pip
 WORKDIR /opt
-RUN git clone https://github.com/ianmiell/shutit.git
-WORKDIR shutit
-RUN pip install -r requirements.txt
-
-WORKDIR /space/git/shutit-distro/bish <- TODO You will likely need to to change this
-RUN /opt/shutit/shutit build --shutit_module_path /opt/shutit/library --delivery bash
+RUN git clone https://github.com/ianmiell/shutit-distro.git
+WORKDIR /opt/shutit-distro/bish
+RUN /opt/shutit/shutit build --shutit_module_path .. --delivery bash
 
 CMD ["/bin/bash"] 

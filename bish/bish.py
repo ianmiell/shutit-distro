@@ -15,8 +15,10 @@ class bish(ShutItModule):
 		shutit.send('make')
 		shutit.send('cp bish /usr/bin/bish')
 		return True
+
 	def finalize(self, shutit):
 		shutit.send('rm -rf /tmp/build/bish')
+		return True
 
 def module():
 	return bish(
