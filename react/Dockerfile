@@ -1,9 +1,9 @@
-FROM imiell/sd_node
+FROM imiell/sd_shutit
 
 WORKDIR /opt
 RUN git clone https://github.com/ianmiell/shutit-distro.git
 
-WORKDIR /home/imiell/shutit/library/react <- TODO You will likely need to to change this
+WORKDIR /opt/shutit-distro/react
 RUN /opt/shutit/shutit build --shutit_module_path .. --delivery bash
 
-CMD ["/bin/bash"] 
+CMD ["/bin/bash"]
