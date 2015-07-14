@@ -14,6 +14,7 @@ class tcl(ShutItModule):
 		shutit.send('cd tcl8*')
 		shutit.send('export SRCDIR=`pwd`')
 		shutit.send('cd unix')
+		shutit.pause_point('')
 		shutit.send('./configure --prefix=/usr --without-tzdata --mandir=/usr/share/man $([ $(uname -m) = x86_64 ] && echo --enable-64bit)')
 		shutit.send('make')
 		shutit.send('sed -e "s#$SRCDIR/unix#/usr/lib#" -e "s#$SRCDIR#/usr/include#" -i tclConfig.sh')
