@@ -5,7 +5,7 @@ ShutIt Distribution based on Linux From Scratch
 
 1) An automated Linux From Scratch tar file is built using this shutit module:
 
-https://github.com/ianmiell/shutit/blob/master/library/alfs/alfs.py
+https://github.com/ianmiell/shutit-library/blob/master/alfs/alfs.py
 
 viz: `/artifacts/lfs.tar.xz`
 
