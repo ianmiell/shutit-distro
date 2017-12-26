@@ -16,6 +16,8 @@ class bish(ShutItModule):
 		shutit.send('cp bish /usr/bin/bish')
 		return True
 
+	def is_installed(self,shutit):
+		return False
 	def finalize(self, shutit):
 		shutit.send('rm -rf /tmp/build/bish')
 		return True

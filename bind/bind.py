@@ -16,6 +16,8 @@ class bind(ShutItModule):
 		shutit.send('make')
 		shutit.send('make install')
 		return True
+	def is_installed(self,shutit):
+		return False
 
 	def get_config(self, shutit):
 		return True

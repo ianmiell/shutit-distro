@@ -17,6 +17,9 @@ class apache_portable_runtime(ShutItModule):
 		shutit.send('make install')
 		return True
 
+	def is_installed(self,shutit):
+		return False
+
 	def get_config(self, shutit):
 		shutit.get_config(self.module_id,'version','1.5.1')
 		return True

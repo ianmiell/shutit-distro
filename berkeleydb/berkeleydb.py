@@ -18,6 +18,8 @@ class berkeleydb(ShutItModule):
 		shutit.send('chown -v -R root:root /usr/bin/db_* /usr/include/db{,_185,_cxx}.h /usr/lib/libdb*.{so,la} /usr/share/doc/db-6.1.19')
 		return True
 
+	def is_installed(self,shutit):
+		return False
 	#def get_config(self, shutit):
 	#	shutit.get_config(self.module_id,'item','default')
 	#	return True

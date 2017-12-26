@@ -25,6 +25,9 @@ class apache(ShutItModule):
 # TODO (Apr-Util-1.5.4 needs to be installed with ldap suport
 		return True
 
+	def is_installed(self,shutit):
+		return False
+
 	#def get_config(self, shutit):
 	#	shutit.get_config(self.module_id,'item','default')
 	#	return True

@@ -18,6 +18,8 @@ class boost(ShutItModule):
 		shutit.send('./b2 install threading=multi') #--link=shared omitted as required by eg thrift
 		return True
 
+	def is_installed(self,shutit):
+		return False
 	#def get_config(self, shutit):
 	#	shutit.get_config(self.module_id,'item','default')
 	#	return True
